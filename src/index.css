@@ -1,0 +1,32 @@
+@import "normalize.css";
+
+:root {
+  --background: #F3F7FF;
+  --grey: #E2EAF8;
+  --extra-grey: #8193BD;
+  --primary: #06266F;
+  --main: #857543;
+  --container: 1440px;
+}
+
+* {
+  font-family: "Raleway", sans-serif;
+  scrollbar-width: none;
+  scrollbar-color: var(--primary);
+  overflow-x: hidden;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: var(--primary);
+}
+
+

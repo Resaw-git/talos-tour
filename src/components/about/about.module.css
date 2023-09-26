@@ -1,0 +1,53 @@
+.about {
+  margin-top: 180px;
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.container {
+  width: var(--container);
+}
+
+.layout {
+  padding: 0 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left {
+  width: 487px;
+}
+
+.left > h2 {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 40px 0;
+}
+
+.left > p {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.right {
+  width: 627px;
+  position: relative;
+}
+
+.background {
+  right: 0;
+  position: absolute;
+  bottom: 0;
+  background-color: var(--grey);
+  width: 588px;
+  height: 503px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.04);
+  border-radius: 30px;
+}
+
+.photo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
