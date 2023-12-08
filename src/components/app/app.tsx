@@ -4,6 +4,11 @@ import { Promo } from "#components/promo/promo";
 import { Advantages } from "#components/advantages/advantages";
 import { About } from "#components/about/about";
 import { Quiz } from "#components/quiz/quiz";
+import { Blog } from "#components/blog/blog";
+import { Reviews } from "#components/reviews/reviews";
+import { Subscribe } from "#components/subcribe/subscribe";
+import { Gallery } from "#components/gallery/gallery";
+
 
 export const App = () => {
   return (
@@ -14,6 +19,10 @@ export const App = () => {
         <Advantages />
         <About />
         <Quiz />
+        <Blog />
+        <Reviews />
+        <Subscribe />
+        <Gallery />
       </main>
     </div>
   );
