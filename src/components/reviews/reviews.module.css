@@ -5,6 +5,7 @@
   align-items: center;
   border-radius: 30px;
   flex-direction: column;
+  justify-content: center;
   height: 772px;
   background-color: var(--grey);
 }
@@ -14,7 +15,7 @@
 }
 
 .layout {
-  padding: 48px 120px;
+  padding: 0 120px;
 }
 
 .reviews h1 {

@@ -15,7 +15,7 @@ export const Promo = () => {
       } else {
         setCount((prev) => prev + 1);
       }
-    }, 10000);
+    }, 10 * 1000);
 
     timeout();
 
