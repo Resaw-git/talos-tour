@@ -1,0 +1,10 @@
+.main {
+  position: relative;
+}
+
+.arrows {
+  position: absolute;
+  bottom: 36px;
+  right: 36px;
+  width: 140px;
+}

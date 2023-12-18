@@ -12,7 +12,7 @@
   background-position: center;
   background-size: cover;
   border-radius: 0 0 80px 80px;
-  transition: background 1s ease-in-out;
+  transition: background var(--transition-delay);
 }
 
 .container {

@@ -3,7 +3,8 @@ import sh1 from "#assets/images/sh1.png";
 import sh2 from "#assets/images/sh2.png";
 import sh3 from "#assets/images/sh3.png";
 import sh4 from "#assets/images/sh4.png";
-import Arrow from "#assets/icons/arrow.svg";
+import { Arrow } from "#ui/arrow/arrow";
+
 
 export const Reviews = () => {
   return (
@@ -18,8 +19,8 @@ export const Reviews = () => {
             <img src={sh4} alt="скриншот с отзывом" />
           </div>
           <div className={styles.controls}>
-            <button> <Arrow /> </button>
-            <button> <Arrow /> </button>
+            <Arrow direction="left" />
+            <Arrow direction="right" />
           </div>
         </div>
       </div>

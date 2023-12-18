@@ -35,22 +35,3 @@
   justify-content: center;
   gap: 24px;
 }
-
-.controls button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 56px;
-  height: 56px;
-  border: 1px solid var(--primary);
-  border-radius: 50%;
-  background-color: var(--primary);
-}
-
-.controls button:first-child {
-  transform: rotate(180deg);
-}
-
-.controls button:hover {
-  cursor: pointer;
-}
