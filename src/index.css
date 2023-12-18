@@ -14,7 +14,6 @@
   font-family: "Raleway", sans-serif;
   scrollbar-width: none;
   scrollbar-color: var(--primary);
-  overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
