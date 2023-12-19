@@ -1,10 +1,19 @@
-.img {
-  font-size: 24px;
+.container {
+  width: 180px;
+  height: 180px;
   cursor: pointer;
+  border-radius: 30px;
+  border: 4px solid transparent;
+  overflow: hidden;
 }
 
 .selected {
-  font-size: 28px;
-  color: var(--primary);
-  cursor: pointer;
+  composes: container;
+  border-color: var(--primary);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

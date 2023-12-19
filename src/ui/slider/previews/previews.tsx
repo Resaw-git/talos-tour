@@ -8,7 +8,7 @@ export const Previews = () => {
   const renderViews = () => {
     const nums = [];
     for (let i = 0; i < items.length; i++) {
-      nums.push(<PreviewImg key={i} number={i} />);
+      nums.push(<PreviewImg key={i} number={i} src={items[i]} />);
     }
 
     return nums;
