@@ -76,13 +76,14 @@
   transition: border-color var(--transition-delay);
 }
 
-.whatsup svg path {
-  transition: fill var(--transition-delay);
-}
-
 .whatsup:hover {
   transition: border-color var(--transition-delay);
   border-color: #43d854;
+}
+
+.whatsup svg path {
+  fill: var(--main);
+  transition: fill var(--transition-delay);
 }
 
 .whatsup:hover svg path {

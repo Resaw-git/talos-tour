@@ -1,10 +1,11 @@
 @import "normalize.css";
 
+
 :root {
-  --background: #F3F7FF;
-  --grey: #E2EAF8;
-  --extra-grey: #8193BD;
-  --primary: #06266F;
+  --background: #f3f7ff;
+  --grey: #e2eaf8;
+  --extra-grey: #8193bd;
+  --primary: #06266f;
   --main: #857543;
   --container: 1440px;
   --transition-delay: 0.3s ease;
@@ -28,5 +29,3 @@
   border-radius: 15px;
   background-color: var(--primary);
 }
-
-
