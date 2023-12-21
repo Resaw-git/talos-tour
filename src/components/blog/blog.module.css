@@ -54,26 +54,4 @@
   justify-content: center;
 }
 
-.button button {
-  color: #ffffff;
-  background-color: var(--primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 700;
-  border: 1px solid var(--primary);
-  border-radius: 30px;
-  width: 100%;
-  padding: 20px 0;
-  cursor: pointer;
-  transition:
-    color var(--transition-delay),
-    background-color var(--transition-delay);
 
-}
-
-.button button:hover {
-  color: var(--primary);
-  background-color: #ffffff;
-}

@@ -9,12 +9,14 @@
   background-color: var(--primary);
   transition:
     background-color var(--transition-delay),
-    fill var(--transition-delay);
+    fill var(--transition-delay),
+    border-color var(--transition-delay);
 }
 
 .arrow:hover {
   background-color: white;
   cursor: pointer;
+  border-color: #ffffff;
 }
 
 .left,

@@ -3,6 +3,7 @@ import spring from "#assets/images/spring.png";
 import summer from "#assets/images/summer.png";
 import fall from "#assets/images/fall.png";
 import winter from "#assets/images/winter.png";
+import { Button } from "#ui/button/button";
 
 export const Blog = () => {
   return (
@@ -20,28 +21,28 @@ export const Blog = () => {
               <img src={spring} alt="весна" />
               <h4>Весна</h4>
               <div className={styles.button}>
-                <button>Узнать подробнее</button>
+                <Button>Узнать подробнее</Button>
               </div>
             </div>
             <div className={styles.card}>
               <img src={summer} alt="лето" />
               <h4>Лето</h4>
               <div className={styles.button}>
-                <button>Узнать подробнее</button>
+                <Button>Узнать подробнее</Button>
               </div>
             </div>
             <div className={styles.card}>
               <img src={fall} alt="осень" />
               <h4>Осень</h4>
               <div className={styles.button}>
-                <button>Узнать подробнее</button>
+                <Button>Узнать подробнее</Button>
               </div>
             </div>
             <div className={styles.card}>
               <img src={winter} alt="зима" />
               <h4>Зима</h4>
               <div className={styles.button}>
-                <button>Узнать подробнее</button>
+                <Button>Узнать подробнее</Button>
               </div>
             </div>
           </div>
