@@ -8,6 +8,7 @@ import { Blog } from "#components/blog/blog";
 import { Reviews } from "#components/reviews/reviews";
 import { Subscribe } from "#components/subcribe/subscribe";
 import { Gallery } from "#components/gallery/gallery";
+import { Footer } from "#components/footer/footer";
 
 
 export const App = () => {
@@ -24,6 +25,7 @@ export const App = () => {
         <Subscribe />
         <Gallery />
       </main>
+      <Footer />
     </div>
   );
 };

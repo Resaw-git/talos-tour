@@ -12,7 +12,7 @@
   background-position: center;
   background-size: cover;
   border-radius: 0 0 80px 80px;
-  transition: background 1s ease-in-out;
+  transition: background var(--transition-delay);
 }
 
 .container {
@@ -38,32 +38,6 @@
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 24px;
-}
-
-.left button {
-  width: 100%;
-  color: #ffffff;
-  display: flex;
-  padding: 20px;
-  border: 1px solid var(--primary);
-  border-radius: 30px;
-  background-color: var(--primary);
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  font-weight: 700;
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease;
-}
-
-.left button:hover {
-  color: var(--primary);
-  background-color: #ffffff;
-  cursor: pointer;
-  transition:
-    color 0.3s ease,
-    background-color 0.3s ease;
 }
 
 .right {

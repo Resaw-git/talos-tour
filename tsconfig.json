@@ -23,6 +23,8 @@
       "#assets/*": ["./src/assets/*"],
       "#components/*": ["./src/components/*"],
       "#ui/*": ["./src/ui/*"],
+      "#redux/*": ["./src/redux/*"],
+
     },
     "allowSyntheticDefaultImports": true
   },

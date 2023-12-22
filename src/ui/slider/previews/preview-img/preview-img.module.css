@@ -1,0 +1,19 @@
+.container {
+  width: 180px;
+  height: 180px;
+  cursor: pointer;
+  border-radius: 30px;
+  border: 4px solid transparent;
+  overflow: hidden;
+}
+
+.selected {
+  composes: container;
+  border-color: var(--primary);
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

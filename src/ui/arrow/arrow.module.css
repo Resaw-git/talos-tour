@@ -1,0 +1,36 @@
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--primary);
+  border-radius: 50%;
+  background-color: var(--primary);
+  transition:
+    background-color var(--transition-delay),
+    fill var(--transition-delay),
+    border-color var(--transition-delay);
+}
+
+.arrow:hover {
+  background-color: white;
+  cursor: pointer;
+  border-color: #ffffff;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow:hover .left svg path,
+.arrow:hover .right svg path {
+  fill: var(--primary);
+}
+
+.left {
+  transform: rotate(180deg);
+}
