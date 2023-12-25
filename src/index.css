@@ -7,6 +7,7 @@
   --extra-grey: #8193bd;
   --primary: #06266f;
   --main: #857543;
+  --error: #FF0E0E;
   --container: 1440px;
   --transition-delay: 0.3s ease;
 }
