@@ -1,5 +1,5 @@
 import styles from "./slider-list.module.css";
-import { useAppSelector } from "#redux/hooks";
+import { useAppSelector } from "../../../redux/hooks";
 import { SliderImg } from "./slider-img/slider-img";
 
 export const SliderList = () => {

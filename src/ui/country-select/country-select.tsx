@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Autocomplete, { autocompleteClasses } from "@mui/material/Autocomplete";
-import { ruCountries } from "#ui/country-select/countries";
+import { ruCountries } from "./countries";
 import { Popper, styled } from "@mui/material";
 
 const StyledPopper = styled(Popper)({

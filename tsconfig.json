@@ -7,7 +7,7 @@
     "skipLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -19,13 +19,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "paths": {
-      "#assets/*": ["./src/assets/*"],
-      "#components/*": ["./src/components/*"],
-      "#ui/*": ["./src/ui/*"],
-      "#redux/*": ["./src/redux/*"],
-
-    },
     "allowSyntheticDefaultImports": true
   },
   "include": ["src"],

@@ -1,9 +1,9 @@
 import styles from "./quiz.module.css";
-import palm1 from "#assets/images/palm1.svg";
-import palm2 from "#assets/images/palm2.svg";
-import palm3 from "#assets/images/palm3.svg";
-import { CountrySelect } from "#ui/country-select/country-select";
-import Arrow from "#assets/icons/arrow.svg";
+import palm1 from "../../assets/images/palm1.svg";
+import palm2 from "../../assets/images/palm2.svg";
+import palm3 from "../../assets/images/palm3.svg";
+import { CountrySelect } from "../../ui/country-select/country-select";
+import Arrow from "../../assets/icons/arrow.svg";
 
 export const Quiz = () => {
   const quest1 = (
@@ -27,9 +27,9 @@ export const Quiz = () => {
         <img src={palm1} alt="пальма" className={styles.palm1} />
         <img src={palm2} alt="пальма" className={styles.palm2} />
         <img src={palm3} alt="пальма" className={styles.palm3} />
-        <div className={styles.container}>
+
         {quest1}
-        </div>
+
       </div>
     </section>
   );

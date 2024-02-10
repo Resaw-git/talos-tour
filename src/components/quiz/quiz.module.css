@@ -22,7 +22,6 @@
   font-weight: 700;
 }
 
-
 .background {
   position: relative;
   display: flex;
@@ -85,4 +84,21 @@
   color: #ffffff;
   padding: 13px 55px;
   gap: 10px;
+  cursor: pointer;
+  transition:
+    color var(--transition-delay),
+    background-color var(--transition-delay);
+}
+
+.button svg path {
+  transition: fill var(--transition-delay);
+}
+
+.button:hover svg path {
+  fill: var(--primary);
+}
+
+.button:hover {
+  color: var(--primary);
+  background-color: #fff;
 }

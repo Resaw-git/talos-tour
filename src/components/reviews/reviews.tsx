@@ -1,9 +1,9 @@
 import styles from "./reviews.module.css";
-import sh1 from "#assets/images/sh1.png";
-import sh2 from "#assets/images/sh2.png";
-import sh3 from "#assets/images/sh3.png";
-import sh4 from "#assets/images/sh4.png";
-import { Arrow } from "#ui/arrow/arrow";
+import sh1 from "../../assets/images/sh1.png";
+import sh2 from "../../assets/images/sh2.png";
+import sh3 from "../../assets/images/sh3.png";
+import sh4 from "../../assets/images/sh4.png";
+import { Arrow } from "../../ui/arrow/arrow";
 
 
 export const Reviews = () => {

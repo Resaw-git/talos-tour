@@ -1,5 +1,5 @@
 import styles from "./arrow.module.css";
-import SVG from "#assets/icons/arrow.svg";
+import SVG from "../../assets/icons/arrow.svg";
 import { FC } from "react";
 
 type ArrowType = {

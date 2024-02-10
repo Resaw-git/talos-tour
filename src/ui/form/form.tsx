@@ -1,7 +1,7 @@
 import styles from "./form.module.css";
-import { Button } from "#ui/button/button";
-import { Input } from "#ui/form/input/input";
-import { Checkbox } from "#ui/form/checkbox/checkbox";
+import { Button } from "../button/button";
+import { Input } from "./input/input";
+import { Checkbox } from "./checkbox/checkbox";
 
 export const Form = () => {
   return (

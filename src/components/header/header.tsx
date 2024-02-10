@@ -1,6 +1,6 @@
 import styles from "./header.module.css";
-import Logo from "#assets/images/logo.svg";
-import Whatsup from "#assets/icons/whatsup.svg";
+import Logo from "../../assets/images/Logo.svg";
+import Whatsup from "../../assets/icons/whatsup.svg";
 
 export const Header = () => {
   return (

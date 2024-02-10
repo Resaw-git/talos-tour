@@ -1,6 +1,6 @@
 import styles from "./subscribe.module.css";
-import Telegram from "#assets/icons/teleg.svg";
-import Instagram from "#assets/icons/inst.svg";
+import Telegram from "../../assets/icons/teleg.svg";
+import Instagram from "../../assets/icons/inst.svg";
 
 export const Subscribe = () => {
   return (

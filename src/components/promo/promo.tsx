@@ -1,9 +1,9 @@
 import styles from "./promo.module.css";
-import img1 from "#assets/images/promo_uhd.png";
-import img2 from "#assets/images/promo2_uhd.png";
-import img3 from "#assets/images/promo3_uhd.png";
+import img1 from "../../assets/images/promo_uhd.png";
+import img2 from "../../assets/images/promo2_uhd.png";
+import img3 from "../../assets/images/promo3_uhd.png";
 import { useEffect, useState } from "react";
-import { Button } from "#ui/button/button";
+import { Button } from "../../ui/button/button";
 
 export const Promo = () => {
   const images = [img1, img2, img3];

@@ -1,9 +1,9 @@
 import styles from "./blog.module.css";
-import spring from "#assets/images/spring.png";
-import summer from "#assets/images/summer.png";
-import fall from "#assets/images/fall.png";
-import winter from "#assets/images/winter.png";
-import { Button } from "#ui/button/button";
+import spring from "../../assets/images/spring.png";
+import summer from "../../assets/images/summer.png";
+import fall from "../../assets/images/fall.png";
+import winter from "../../assets/images/winter.png";
+import { Button } from "../../ui/button/button";
 
 export const Blog = () => {
   return (
