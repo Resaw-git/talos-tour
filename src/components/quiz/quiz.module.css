@@ -25,9 +25,10 @@
 .background {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-wrap: nowrap;
+  justify-content: start;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   height: 562px;
   border-radius: 80px;
   background-color: var(--primary);
@@ -60,18 +61,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   height: 562px;
+  width: 100vw;
   color: #ffffff;
+  transition: transform 0.5s ease-in-out;
 }
 
-.content > h3 {
+.wrapper > h3 {
   margin: 0;
   font-size: 24px;
   font-weight: 500;
 }
 
 .button {
+  width: 180px;
   margin-top: 42px;
   display: flex;
   font-size: 16px;
@@ -82,7 +86,7 @@
   border-radius: 30px;
   background-color: transparent;
   color: #ffffff;
-  padding: 13px 55px;
+  padding: 13px;
   gap: 10px;
   cursor: pointer;
   transition:
@@ -101,4 +105,31 @@
 .button:hover {
   color: var(--primary);
   background-color: #fff;
+}
+
+.quest {
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.group_buttons {
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow_back {
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.datepicker {
+  margin-top: 24px;
 }

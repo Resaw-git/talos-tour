@@ -9,7 +9,7 @@ type InputType = InputHTMLAttributes<HTMLInputElement> & {
 export const Input:FC <InputType> = ({isError, errorText, ...props}) => {
   return (
     <div className={styles.box}>
-      <input {...props} className={`${styles.input} ${isError && styles.errorBorder}`} type={"text"} required={true} />
+      <input {...props} className={`${styles.input} ${isError && styles.errorBorder}`} placeholder="" type={"text"} required={true} />
       <span className={`${styles.placeholder} ${isError && styles.errorText}`}>
         {props.placeholder}
       </span>
