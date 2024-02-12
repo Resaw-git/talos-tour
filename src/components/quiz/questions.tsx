@@ -5,6 +5,7 @@ import Arrow from "../../assets/icons/arrow.svg";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { FC, ReactNode } from "react";
 import { Datepicker } from "../../ui/datepicker/datepicker";
+import { Counter } from "../../ui/counter/counter";
 
 const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
   const { currentQuest } = useAppSelector((state) => state.quiz);
@@ -58,17 +59,56 @@ export const Question2 = () => {
   );
 };
 export const Question3 = () => {
+  const dispatch = useAppDispatch();
   return (
-    <div className={styles.content}>
-      <h1></h1>
-    </div>
+    <Wrapper>
+      <>
+        <h3>3/5 На сколько человек нужен тур?</h3>
+        <div className={styles.counters}>
+          <Counter>
+            <p>Взрослых</p>
+          </Counter>
+          <div style={{marginRight: '24px'}}></div>
+          <Counter>
+            <p>Детей</p>
+          </Counter>
+        </div>
+        <div className={styles.group_buttons}>
+          <button className={styles.button} onClick={() => dispatch(prevQ())}>
+            <span className={styles.arrow_back}><Arrow /></span> Назад
+          </button>
+          <button className={styles.button} onClick={() => dispatch(nextQ())}>
+            Далее <Arrow />
+          </button>
+        </div>
+      </>
+    </Wrapper>
   );
 };
 export const Question4 = () => {
+  const dispatch = useAppDispatch();
   return (
-    <div className={styles.content}>
-      <h1></h1>
-    </div>
+    <Wrapper>
+      <>
+        <h3>3/5 На сколько человек нужен тур?</h3>
+        <div className={styles.counters}>
+          <Counter>
+            Взрослых
+          </Counter>
+          <Counter>
+            Детей
+          </Counter>
+        </div>
+        <div className={styles.group_buttons}>
+          <button className={styles.button} onClick={() => dispatch(prevQ())}>
+            <span className={styles.arrow_back}><Arrow /></span> Назад
+          </button>
+          <button className={styles.button} onClick={() => dispatch(nextQ())}>
+            Далее <Arrow />
+          </button>
+        </div>
+      </>
+    </Wrapper>
   );
 };
 export const Question5 = () => {

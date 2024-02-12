@@ -133,3 +133,8 @@
 .datepicker {
   margin-top: 24px;
 }
+
+.counters {
+  margin-top: 42px;
+  display: flex;
+}
