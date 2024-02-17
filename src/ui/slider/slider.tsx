@@ -1,7 +1,7 @@
 import styles from "./slider.module.css";
-import { Arrows } from "#ui/slider/arrows/arrows";
-import { SliderList } from "#ui/slider/slider-list/slider-list";
-import { Previews } from "#ui/slider/previews/previews";
+import { Arrows } from "./arrows/arrows";
+import { SliderList } from "./slider-list/slider-list";
+import { Previews } from "./previews/previews";
 
 export const Slider = () => {
 

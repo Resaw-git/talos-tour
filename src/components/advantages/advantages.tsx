@@ -1,9 +1,9 @@
 import styles from "./advantages.module.css";
-import Handshake from "#assets/icons/handshake.svg";
-import Safety from "#assets/icons/safety.svg";
-import Flight from "#assets/icons/flight-international.svg";
-import Headphone from "#assets/icons/headphone.svg";
-import Royal from "#assets/icons/royal.svg";
+import Handshake from "../../assets/icons/handshake.svg";
+import Safety from "../../assets/icons/safety.svg";
+import Flight from "../../assets/icons/flight-international.svg";
+import Headphone from "../../assets/icons/headphone.svg";
+import Royal from "../../assets/icons/royal.svg";
 
 export const Advantages = () => {
   return (

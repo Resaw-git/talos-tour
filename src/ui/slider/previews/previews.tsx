@@ -1,6 +1,6 @@
 import styles from "./previews.module.css";
-import { useAppSelector } from "#redux/hooks";
-import { PreviewImg } from "#ui/slider/previews/preview-img/preview-img";
+import { useAppSelector } from "../../../redux/hooks";
+import { PreviewImg } from "./preview-img/preview-img";
 
 export const Previews = () => {
   const { items } = useAppSelector(state => state.slider);

@@ -1,9 +1,9 @@
 import styles from "./promo.module.css";
-import img1 from "#assets/images/promo_uhd.png";
-import img2 from "#assets/images/promo2_uhd.png";
-import img3 from "#assets/images/promo3_uhd.png";
+import img1 from "../../assets/images/promo_uhd.png";
+import img2 from "../../assets/images/promo2_uhd.png";
+import img3 from "../../assets/images/promo3_uhd.png";
 import { useEffect, useState } from "react";
-import { Button } from "#ui/button/button";
+import { Button } from "../../ui/button/button";
 
 export const Promo = () => {
   const images = [img1, img2, img3];
@@ -31,7 +31,7 @@ export const Promo = () => {
         <div className={styles.layout}>
           <div className={styles.left}>
             <p>Подберите идеальный тур не выходя из дома</p>
-            <Button>Воплотить мечту</Button>
+            <Button style={"light"}>Воплотить мечту</Button>
           </div>
           <div className={styles.right}>
             <h1>Туристическое агентство Talos&nbsp;Tour</h1>

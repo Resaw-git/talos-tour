@@ -1,7 +1,7 @@
 import styles from "./preview-img.module.css";
 import { FC } from "react";
-import { useAppDispatch, useAppSelector } from "#redux/hooks";
-import { goToSlide } from "#redux/slices/slider-slice";
+import { useAppDispatch, useAppSelector } from "../../../../redux/hooks";
+import { goToSlide } from "../../../../redux/slices/slider-slice";
 
 type PreviewImgType = {
   number: number;

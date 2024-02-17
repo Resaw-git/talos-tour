@@ -21,6 +21,11 @@
   transition: var(--transition-delay);
 }
 
+.input_dark {
+  composes: input;
+  background-color: #ffffff;
+}
+
 .input::placeholder {
   visibility: hidden;
 }

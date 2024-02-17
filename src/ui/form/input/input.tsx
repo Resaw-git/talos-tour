@@ -3,17 +3,20 @@ import { FC, InputHTMLAttributes } from "react";
 
 type InputType = InputHTMLAttributes<HTMLInputElement> & {
   isError?: boolean;
-  errorText?: string
+  errorText?: string;
+  style: "light" | "dark"
 }
 
-export const Input:FC <InputType> = (props) => {
+export const Input:FC <InputType> = ({isError, errorText, style, ...props}) => {
+
+
   return (
     <div className={styles.box}>
-      <input {...props} className={`${styles.input} ${props.isError && styles.errorBorder}`} type={"text"} required={true} />
-      <span className={`${styles.placeholder} ${props.isError && styles.errorText}`}>
+      <input {...props} className={`${style === "light" ? styles.input : styles.input_dark} ${isError && styles.errorBorder}`} placeholder="" type={"text"} required={true} />
+      <span className={`${styles.placeholder} ${isError && styles.errorText}`}>
         {props.placeholder}
       </span>
-      {props.isError && <span className={styles.error}>{props.errorText}</span>}
+      {isError && <span className={styles.error}>{errorText}</span>}
     </div>
   );
 };
