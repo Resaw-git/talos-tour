@@ -6,6 +6,9 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { FC, ReactNode } from "react";
 import { Datepicker } from "../../ui/datepicker/datepicker";
 import { Counter } from "../../ui/counter/counter";
+import { Stars } from "../../ui/stars/stars";
+import { FoodSelect } from "../../ui/food-select/food-select";
+import { Form } from "../../ui/form/form";
 
 const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
   const { currentQuest } = useAppSelector((state) => state.quiz);
@@ -48,7 +51,10 @@ export const Question2 = () => {
         </div>
         <div className={styles.group_buttons}>
           <button className={styles.button} onClick={() => dispatch(prevQ())}>
-            <span className={styles.arrow_back}><Arrow /></span> Назад
+            <span className={styles.arrow_back}>
+              <Arrow />
+            </span>
+            Назад
           </button>
           <button className={styles.button} onClick={() => dispatch(nextQ())}>
             Далее <Arrow />
@@ -68,14 +74,17 @@ export const Question3 = () => {
           <Counter>
             <p>Взрослых</p>
           </Counter>
-          <div style={{marginRight: '24px'}}></div>
+          <div style={{ marginRight: "24px" }}></div>
           <Counter>
             <p>Детей</p>
           </Counter>
         </div>
         <div className={styles.group_buttons}>
           <button className={styles.button} onClick={() => dispatch(prevQ())}>
-            <span className={styles.arrow_back}><Arrow /></span> Назад
+            <span className={styles.arrow_back}>
+              <Arrow />
+            </span>
+            Назад
           </button>
           <button className={styles.button} onClick={() => dispatch(nextQ())}>
             Далее <Arrow />
@@ -90,18 +99,21 @@ export const Question4 = () => {
   return (
     <Wrapper>
       <>
-        <h3>3/5 На сколько человек нужен тур?</h3>
+        <h3>4/5 Параметры отеля</h3>
         <div className={styles.counters}>
-          <Counter>
-            Взрослых
-          </Counter>
-          <Counter>
-            Детей
-          </Counter>
+          <Stars>
+            <p>Количество звёзд</p>
+          </Stars>
+        </div>
+        <div className={styles.counters}>
+          <FoodSelect />
         </div>
         <div className={styles.group_buttons}>
           <button className={styles.button} onClick={() => dispatch(prevQ())}>
-            <span className={styles.arrow_back}><Arrow /></span> Назад
+            <span className={styles.arrow_back}>
+              <Arrow />
+            </span>
+            Назад
           </button>
           <button className={styles.button} onClick={() => dispatch(nextQ())}>
             Далее <Arrow />
@@ -113,8 +125,12 @@ export const Question4 = () => {
 };
 export const Question5 = () => {
   return (
-    <div className={styles.content}>
-      <h1></h1>
-    </div>
+    <Wrapper>
+      <h3>5/5 Ваши данные для связи</h3>
+      <div className={styles.form}>
+        <Form style={"dark"}/>
+      </div>
+
+    </Wrapper>
   );
 };

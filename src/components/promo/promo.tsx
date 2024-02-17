@@ -31,7 +31,7 @@ export const Promo = () => {
         <div className={styles.layout}>
           <div className={styles.left}>
             <p>Подберите идеальный тур не выходя из дома</p>
-            <Button>Воплотить мечту</Button>
+            <Button style={"light"}>Воплотить мечту</Button>
           </div>
           <div className={styles.right}>
             <h1>Туристическое агентство Talos&nbsp;Tour</h1>

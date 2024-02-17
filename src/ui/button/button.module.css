@@ -22,3 +22,8 @@
   background-color: #ffffff;
   border-color: #ffffff;
 }
+
+.button_dark {
+  composes: button;
+  border: 1px solid #ffffff;
+}

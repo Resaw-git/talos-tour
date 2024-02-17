@@ -1,9 +1,11 @@
 import styles from "./checkbox.module.css";
 import { FC, InputHTMLAttributes } from "react";
 
-type CheckboxPropsType = InputHTMLAttributes<HTMLInputElement>
+type CheckboxPropsType = InputHTMLAttributes<HTMLInputElement> & {
+  style: "light" | "dark"
+}
 
-export const Checkbox:FC<CheckboxPropsType> = (props) => {
+export const Checkbox:FC<CheckboxPropsType> = ({style, ...props}) => {
 
   return (
     <label className={styles.label}>
@@ -12,7 +14,7 @@ export const Checkbox:FC<CheckboxPropsType> = (props) => {
         className={styles.real_checkbox}
         {...props}
       />
-      <span className={styles.custom_checkbox} />
+      <span className={`${style === "light" ? styles.light_checkbox : styles.dark_checkbox}`} />
     </label>
   );
 };

@@ -21,6 +21,7 @@ export const Quiz = () => {
         <Question3 />
         <Question4 />
         <Question5 />
+
       </div>
     </section>
   );
