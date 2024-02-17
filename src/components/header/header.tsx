@@ -2,7 +2,8 @@ import styles from "./header.module.css";
 import Logo from "../../assets/images/Logo.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
 import { useAppDispatch } from "../../redux/hooks";
-import { openModal } from "../../redux/slices/modal-slice";
+import { openBurger, openModal } from "../../redux/slices/modal-slice";
+import Burger from "../../assets/icons/burger.svg";
 
 export const Header = () => {
   const dispatch = useAppDispatch();
@@ -23,13 +24,18 @@ export const Header = () => {
               <li className={styles.list_item}>Контакты</li>
             </ul>
           </nav>
-          <a href="tel:+79217747604" className={styles.phone}>+7 921 774-76-04</a>
-          <a href="#" className={styles.whatsup}>
-            <Whatsup />
-          </a>
-          <button className={styles.recall} onClick={() => dispatch(openModal())}>
-            Обратный звонок
-          </button>
+          <div className={styles.buttons}>
+            <a href="tel:+79217747604" className={styles.phone}>+7 921 774-76-04</a>
+            <a href="#" className={styles.whatsup}>
+              <Whatsup />
+            </a>
+            <button className={styles.recall} onClick={() => dispatch(openModal())}>
+              Обратный звонок
+            </button>
+            <button className={styles.burger} onClick={() => dispatch(openBurger())}>
+              <Burger />
+            </button>
+          </div>
         </div>
       </div>
     </header>

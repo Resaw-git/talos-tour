@@ -30,3 +30,9 @@
   border-radius: 15px;
   background-color: var(--primary);
 }
+
+@media screen and (max-width: 1439px) {
+  :root {
+    --container: 100vw;
+  }
+}

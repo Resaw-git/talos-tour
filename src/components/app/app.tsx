@@ -11,25 +11,27 @@ import { Gallery } from "../gallery/gallery";
 import { Footer } from "../footer/footer";
 import { useAppSelector } from "../../redux/hooks";
 import { Modal } from "../modal/modal";
+import { Burger } from "../burger/burger";
 
 export const App = () => {
-  const { open } = useAppSelector(state => state.modal);
+  const { modal, burger } = useAppSelector(state => state.modal);
 
   return (
     <div className={styles.body}>
       <Header />
-      <main>
-        <Promo />
-        <Advantages />
-        <About />
-        <Quiz />
-        <Blog />
-        <Reviews />
-        <Subscribe />
-        <Gallery />
-      </main>
-      <Footer />
-      {open && <Modal />}
+      {/*<main>*/}
+      {/*  <Promo />*/}
+      {/*  <Advantages />*/}
+      {/*  <About />*/}
+      {/*  <Quiz />*/}
+      {/*  <Blog />*/}
+      {/*  <Reviews />*/}
+      {/*  <Subscribe />*/}
+      {/*  <Gallery />*/}
+      {/*</main>*/}
+      {/*<Footer />*/}
+      {modal && <Modal />}
+      {burger && <Burger />}
     </div>
   );
 };
