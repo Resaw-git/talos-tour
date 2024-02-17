@@ -9,8 +9,12 @@ import { Reviews } from "../reviews/reviews";
 import { Subscribe } from "../subcribe/subscribe";
 import { Gallery } from "../gallery/gallery";
 import { Footer } from "../footer/footer";
+import { useAppSelector } from "../../redux/hooks";
+import { Modal } from "../modal/modal";
 
 export const App = () => {
+  const { open } = useAppSelector(state => state.modal);
+
   return (
     <div className={styles.body}>
       <Header />
@@ -25,6 +29,7 @@ export const App = () => {
         <Gallery />
       </main>
       <Footer />
+      {open && <Modal />}
     </div>
   );
 };

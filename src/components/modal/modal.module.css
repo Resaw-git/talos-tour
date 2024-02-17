@@ -1,0 +1,38 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 40%;
+  z-index: 2;
+}
+
+.modal {
+  padding: 40px;
+  position: fixed;
+  z-index: 3;
+  background: var(--grey);
+  left: calc(50% - 720px/2);
+  top: calc(50% - 75vh/2);
+  width: 560px;
+  min-height: 450px;
+  border: 1px solid #4C4CFF33;
+  border-radius: 40px;
+}
+
+.cross {
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  cursor: pointer;
+}
+
+.header {
+  margin: 0 0 40px 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}

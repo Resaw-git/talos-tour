@@ -1,8 +1,12 @@
 import styles from "./header.module.css";
 import Logo from "../../assets/images/Logo.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
+import { useAppDispatch } from "../../redux/hooks";
+import { openModal } from "../../redux/slices/modal-slice";
 
 export const Header = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -23,7 +27,7 @@ export const Header = () => {
           <a href="#" className={styles.whatsup}>
             <Whatsup />
           </a>
-          <button className={styles.recall}>
+          <button className={styles.recall} onClick={() => dispatch(openModal())}>
             Обратный звонок
           </button>
         </div>
