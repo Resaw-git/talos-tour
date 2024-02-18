@@ -155,7 +155,7 @@
 
 @media (orientation: landscape) {
   @media screen and (max-width: 1023px) {
-    .layout, .image {
+    .container, .layout, .image {
       height: 600px;
     }
   }

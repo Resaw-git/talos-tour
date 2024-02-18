@@ -21,7 +21,7 @@ export const App = () => {
       <Header />
       <main>
         <Promo />
-        {/*<Advantages />*/}
+        <Advantages />
         {/*<About />*/}
         {/*<Quiz />*/}
         {/*<Blog />*/}
