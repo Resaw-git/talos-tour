@@ -19,16 +19,16 @@ export const App = () => {
   return (
     <div className={styles.body}>
       <Header />
-      {/*<main>*/}
-      {/*  <Promo />*/}
-      {/*  <Advantages />*/}
-      {/*  <About />*/}
-      {/*  <Quiz />*/}
-      {/*  <Blog />*/}
-      {/*  <Reviews />*/}
-      {/*  <Subscribe />*/}
-      {/*  <Gallery />*/}
-      {/*</main>*/}
+      <main>
+        <Promo />
+        {/*<Advantages />*/}
+        {/*<About />*/}
+        {/*<Quiz />*/}
+        {/*<Blog />*/}
+        {/*<Reviews />*/}
+        {/*<Subscribe />*/}
+        {/*<Gallery />*/}
+      </main>
       {/*<Footer />*/}
       {modal && <Modal />}
       {burger && <Burger />}

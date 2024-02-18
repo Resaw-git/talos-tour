@@ -11,6 +11,7 @@
 
 .burger {
   position: fixed;
+  top: 0;
   z-index: 3;
   width: 100vw;
   height: 100vh;
@@ -127,4 +128,12 @@
   border-radius: 50%;
   background-color: var(--primary);
   color: var(--primary);
+}
+
+@media (orientation: landscape) {
+  .burger {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
 }
