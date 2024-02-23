@@ -22,7 +22,7 @@ export const App = () => {
       <main>
         <Promo />
         <Advantages />
-        {/*<About />*/}
+        <About />
         {/*<Quiz />*/}
         {/*<Blog />*/}
         {/*<Reviews />*/}

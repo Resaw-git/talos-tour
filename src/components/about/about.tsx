@@ -6,8 +6,12 @@ export const About = () => {
     <section className={styles.about}>
       <div className={styles.container}>
         <div className={styles.layout}>
-          <div className={styles.left}>
-            <h2>Talos Tour - семейное турагентство</h2>
+          <h2 className={styles.title}>Talos Tour - семейное турагентство</h2>
+          <div className={styles.photo}>
+            <div className={styles.background}></div>
+            <img src={photo} alt="семейное фото" className={styles.img} />
+          </div>
+          <div className={styles.text}>
             <p>
               Мы всегда вели активный образ жизни, путешествовали, открывали для себя новые страны, изучали их культуру
               и быт. Спустя время решили применить наш богатый опыт в данной сфере и открыть собственное туристическое
@@ -29,10 +33,6 @@ export const About = () => {
               Подборку с фотографиями, отзывами и реальной стоимостью можно получить на любое устройство, подключённое к
               интернету, обсудить с семьёй или друзьями в удобном для вас месте!
             </p>
-          </div>
-          <div className={styles.right}>
-            <div className={styles.background}></div>
-            <img src={photo} alt="семейное фото" className={styles.photo} />
           </div>
         </div>
       </div>

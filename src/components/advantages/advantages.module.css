@@ -140,6 +140,10 @@
     margin-top: 90px;
   }
 
+  .layout {
+    padding: 0 12px;
+  }
+
   .content {
     display: flex;
   }

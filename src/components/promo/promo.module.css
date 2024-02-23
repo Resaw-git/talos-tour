@@ -10,6 +10,7 @@
   position: absolute;
   width: 100vw;
   height: calc(100vh - 65px);
+  background-image: url("/src/assets/images/promo_uhd.png");
   background-position: center;
   background-size: cover;
   border-radius: 0 0 80px 80px;
