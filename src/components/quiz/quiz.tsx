@@ -13,15 +13,14 @@ export const Quiz = () => {
         </div>
       </div>
       <div className={styles.background}>
-        <img src={palm1} alt="пальма" className={styles.palm1} />
-        <img src={palm2} alt="пальма" className={styles.palm2} />
-        <img src={palm3} alt="пальма" className={styles.palm3} />
-        <Question1 />
-        <Question2 />
-        <Question3 />
-        <Question4 />
-        <Question5 />
-
+          <img src={palm1} alt="пальма" className={styles.palm1} />
+          <img src={palm2} alt="пальма" className={styles.palm2} />
+          <img src={palm3} alt="пальма" className={styles.palm3} />
+          <Question1 />
+          <Question2 />
+          <Question3 />
+          <Question4 />
+          <Question5 />
       </div>
     </section>
   );

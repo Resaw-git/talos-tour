@@ -15,7 +15,7 @@ const StyledPopper = styled(Popper)({
     fontWeight: 500,
   },
   [`& .${autocompleteClasses.listbox}`]: {
-    maxHeight: "20vh",
+    height: "auto",
   },
 });
 
@@ -36,7 +36,8 @@ export const CountrySelect = () => {
   return (
     <Autocomplete
       sx={{
-        width: 400,
+        maxWidth: "400px",
+        width: "100%",
         marginTop: "42px",
       }}
       options={ruCountries}

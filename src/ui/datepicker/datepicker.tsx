@@ -27,7 +27,7 @@ export const Datepicker = () => {
           actionBar: {
             actions: ["cancel", "accept"],
           },
-          textField: { variant: "outlined", sx: { bgcolor: "#ffffff", borderRadius: "30px", width: "400px" } },
+          textField: { variant: "outlined", sx: { bgcolor: "#ffffff", borderRadius: "30px", width: "320px" } },
           desktopPaper: { sx: { borderRadius: "30px", margin: "12px 0"} },
         }}
       />

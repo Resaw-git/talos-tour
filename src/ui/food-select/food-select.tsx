@@ -31,7 +31,7 @@ export const FoodSelect = () => {
           },
         }}
         sx={{
-          width: "400px",
+          width: "320px",
           bgcolor: "#ffffff",
           borderRadius: "30px",
           fontFamily: "Raleway",
