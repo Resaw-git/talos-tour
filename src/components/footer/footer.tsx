@@ -46,7 +46,7 @@ export const Footer = () => {
                   </div>
                 </div>
                 <p className={styles.notice}>
-                  *Instagram принадлежит компании Meta, которая запрещена на территории Российской&nbsp;Федерации
+                  *Instagram принадлежит компании Meta, которая запрещена на территории Российской Федерации
                 </p>
               </div>
               <div className={styles.right}>
@@ -59,7 +59,6 @@ export const Footer = () => {
       <div className={styles.under_footer}>
         <div className={styles.container}>
           <div className={styles.layout_footer}>
-            <span className={styles.text}>© {new Date().getFullYear()} Талос Тур. Все права защищены</span>
             <nav className={styles.nav}>
               <ul className={styles.list}>
                 <li className={styles.link}>Главная</li>
@@ -70,7 +69,10 @@ export const Footer = () => {
                 <li className={styles.link}>Для туриста</li>
               </ul>
             </nav>
-            <span className={styles.link}>Политика конфиденциальности</span>
+            <div className={styles.step_menu}>
+              <span className={styles.text}>© {new Date().getFullYear()} Талос Тур. Все права защищены</span>
+              <span className={styles.link}>Политика конфиденциальности</span>
+            </div>
           </div>
         </div>
       </div>

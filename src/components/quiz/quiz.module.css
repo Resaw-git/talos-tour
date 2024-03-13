@@ -143,3 +143,45 @@
   margin-top: 42px;
   width: 485px;
 }
+
+@media screen and (max-width: 1439px) {
+  .layout {
+    padding: 0 80px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .quiz {
+    margin-top: 100px;
+  }
+
+  .layout {
+    padding: 0 32px;
+  }
+
+  .layout > h1 {
+    font-size: 32px;
+  }
+
+  .palm2 {
+   display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .quiz {
+    margin-top: 50px;
+  }
+
+  .layout {
+    padding: 0 12px;
+  }
+
+  .layout > h1 {
+    font-size: 20px;
+  }
+
+  .palm3 {
+    display: none;
+  }
+}
