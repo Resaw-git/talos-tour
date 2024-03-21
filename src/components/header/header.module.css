@@ -1,5 +1,6 @@
 .header {
   position: fixed;
+  top: 0;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -44,6 +45,11 @@
   font-size: 16px;
   font-weight: 600;
   gap: 24px;
+}
+
+.list_item {
+  text-decoration: none;
+  color: var(--primary);
 }
 
 .list_item:hover {
@@ -115,4 +121,76 @@
   transition:
     color var(--transition-delay),
     background-color var(--transition-delay);
+}
+
+.burger {
+  display: none;
+  background-color: var(--main);
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+  border-radius: 50%;
+  width: 58px;
+  height: 58px;
+  border-color: transparent;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 1439px) {
+  .layout {
+    padding: 0 80px;
+    width: 100vw;
+    justify-content: space-between;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .phone {
+    display: none;
+  }
+
+  .recall {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .layout {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    height: 75px;
+  }
+
+  .layout {
+    padding: 0 12px;
+  }
+
+  .logo {
+    width: 61px;
+    height: 44px;
+  }
+
+  .whatsup {
+    width: 44px;
+    height: 44px;
+  }
+
+  .burger {
+    width: 44px;
+    height: 44px;
+  }
 }

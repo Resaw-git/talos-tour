@@ -21,28 +21,28 @@ export const Blog = () => {
               <img src={spring} alt="весна" />
               <h4>Весна</h4>
               <div className={styles.button}>
-                <Button>Узнать подробнее</Button>
+                <Button style={"dark"}>Узнать подробнее</Button>
               </div>
             </div>
             <div className={styles.card}>
               <img src={summer} alt="лето" />
               <h4>Лето</h4>
               <div className={styles.button}>
-                <Button>Узнать подробнее</Button>
+                <Button style={"dark"}>Узнать подробнее</Button>
               </div>
             </div>
             <div className={styles.card}>
               <img src={fall} alt="осень" />
               <h4>Осень</h4>
               <div className={styles.button}>
-                <Button>Узнать подробнее</Button>
+                <Button style={"dark"}>Узнать подробнее</Button>
               </div>
             </div>
             <div className={styles.card}>
               <img src={winter} alt="зима" />
               <h4>Зима</h4>
               <div className={styles.button}>
-                <Button>Узнать подробнее</Button>
+                <Button style={"dark"}>Узнать подробнее</Button>
               </div>
             </div>
           </div>

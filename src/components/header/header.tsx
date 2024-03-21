@@ -1,8 +1,15 @@
 import styles from "./header.module.css";
 import Logo from "../../assets/images/Logo.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
+import { useAppDispatch } from "../../redux/hooks";
+import { openBurger, openModal } from "../../redux/slices/modal-slice";
+import Burger from "../../assets/icons/burger.svg";
+import { scrollTo } from "../../helpers/scroll-to";
+
 
 export const Header = () => {
+  const dispatch = useAppDispatch();
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -12,20 +19,37 @@ export const Header = () => {
           </a>
           <nav className={styles.nav}>
             <ul className={styles.list}>
-              <li className={styles.list_item}>О нас</li>
-              <li className={styles.list_item}>Подобрать тур</li>
-              <li className={styles.list_item}>Отзывы</li>
-              <li className={styles.list_item}>Для туриста</li>
-              <li className={styles.list_item}>Контакты</li>
+              <li className={styles.list_item} onClick={() => scrollTo("about")}>
+                О нас
+              </li>
+              <li className={styles.list_item} onClick={() => scrollTo("get-tour")}>
+                Подобрать тур
+              </li>
+              <li className={styles.list_item} onClick={() => scrollTo("reviews")}>
+                Отзывы
+              </li>
+              <li className={`${styles.list_item} ${styles.disabled}`} onClick={() => scrollTo("for-tourist")}>
+                Для туриста
+              </li>
+              <li className={styles.list_item} onClick={() => scrollTo("contacts")}>
+                Контакты
+              </li>
             </ul>
           </nav>
-          <a href="tel:+79217747604" className={styles.phone}>+7 921 774-76-04</a>
-          <a href="#" className={styles.whatsup}>
-            <Whatsup />
-          </a>
-          <button className={styles.recall}>
-            Обратный звонок
-          </button>
+          <div className={styles.buttons}>
+            <a href="tel:+79217747604" className={styles.phone}>
+              +7 921 774-76-04
+            </a>
+            <a href="https://wa.me/89217747604" target="_blank" className={styles.whatsup}>
+              <Whatsup />
+            </a>
+            <button className={styles.recall} onClick={() => dispatch(openModal())}>
+              Обратный звонок
+            </button>
+            <button className={styles.burger} onClick={() => dispatch(openBurger())}>
+              <Burger />
+            </button>
+          </div>
         </div>
       </div>
     </header>

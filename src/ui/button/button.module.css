@@ -20,7 +20,7 @@
 .button:hover {
   color: var(--primary);
   background-color: #ffffff;
-  border-color: #ffffff;
+  border-color: var(--primary);
 }
 
 .button_dark {

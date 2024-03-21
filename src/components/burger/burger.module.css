@@ -1,0 +1,139 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 40%;
+  z-index: 2;
+}
+
+.burger {
+  position: fixed;
+  top: 0;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.cross {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.link {
+  color: var(--primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone {
+  color: var(--main);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.phone:hover {
+  text-decoration: underline;
+}
+
+.recall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--main);
+  border: 1px solid var(--main);
+  border-radius: 30px;
+  background-color: #fff;
+  margin-bottom: 24px;
+  transition:
+    color var(--transition-delay),
+    background-color var(--transition-delay);
+}
+
+.recall:hover {
+  color: #fff;
+  background-color: var(--main);
+  cursor: pointer;
+  transition:
+    color var(--transition-delay),
+    background-color var(--transition-delay);
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.telegram,
+.whatsup,
+.instagram {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  color: var(--primary);
+}
+
+@media (orientation: landscape) {
+  .burger {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+  }
+}

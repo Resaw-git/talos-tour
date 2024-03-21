@@ -1,0 +1,100 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 40%;
+  z-index: 2;
+}
+
+.modal {
+  box-sizing: border-box;
+  padding: 40px;
+  position: fixed;
+  z-index: 3;
+  background: #ffffff;
+  left: calc(50% - 560px/2);
+  top: calc(50% - 75vh/2);
+  max-width: 560px;
+  min-height: 450px;
+  border: 1px solid #4C4CFF33;
+  border-radius: 40px;
+}
+
+.cross {
+  position: absolute;
+  top: 45px;
+  right: 45px;
+  cursor: pointer;
+}
+
+.header {
+  margin: 0 0 40px 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.title {
+  margin-top: 80px;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.icon {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 480px;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #8193BD;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .modal {
+    padding: 40px 12px;
+    max-width: 100%;
+    left: 0;
+  }
+
+  .container {
+    width: calc(100vw - 24px);
+  }
+
+  .cross {
+    top: 25px;
+    right: 25px;
+  }
+}
