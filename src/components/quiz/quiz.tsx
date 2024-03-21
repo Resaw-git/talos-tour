@@ -6,7 +6,7 @@ import { Question1, Question2, Question3, Question4, Question5 } from "./questio
 
 export const Quiz = () => {
   return (
-    <section className={styles.quiz}>
+    <section className={styles.quiz} id="get-tour">
       <div className={styles.container}>
         <div className={styles.layout}>
           <h1>Ответьте на несколько вопросов и мы подберем Вам идеальное путешествие!</h1>

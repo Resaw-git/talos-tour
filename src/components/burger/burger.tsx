@@ -1,5 +1,5 @@
 import styles from "./burger.module.css";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { closeBurger, openModal } from "../../redux/slices/modal-slice";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -7,9 +7,11 @@ import Cross from "../../assets/icons/cross.svg";
 import Telegram from "../../assets/icons/teleg.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
 import Inst from "../../assets/icons/inst.svg";
+import { scrollTo } from "../../helpers/scroll-to";
 
 export const Burger = () => {
   const dispatch = useAppDispatch();
+  const {burger} = useAppSelector((state) => state.modal);
 
   const escapeModal = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
@@ -25,6 +27,13 @@ export const Burger = () => {
     };
   }, []);
 
+  const scrollToSection = (section: string) => {
+    if (burger) {
+      dispatch(closeBurger())
+    }
+    scrollTo(section);
+  }
+
   return createPortal(
     <>
       <div onClick={() => dispatch(closeBurger())} className={styles.overlay}></div>
@@ -34,12 +43,12 @@ export const Burger = () => {
         </div>
         <nav className={styles.nav}>
           <ul className={styles.list}>
-            <li className={styles.link}>Главная</li>
-            <li className={styles.link}>О нас</li>
-            <li className={styles.link}>Подобрать тур</li>
-            <li className={styles.link}>Отзывы</li>
-            <li className={styles.link}>Для туриста</li>
-            <li className={styles.link}>Контакты</li>
+            <li className={styles.link} onClick={() => scrollToSection("promo")}>Главная</li>
+            <li className={styles.link} onClick={() => scrollToSection("about")}>О нас</li>
+            <li className={styles.link} onClick={() => scrollToSection("tour")}>Подобрать тур</li>
+            <li className={styles.link} onClick={() => scrollToSection("reviews")}>Отзывы</li>
+            <li className={styles.link} onClick={() => scrollToSection("for-tourist")}>Для туриста</li>
+            <li className={styles.link} onClick={() => scrollToSection("contacts")}>Контакты</li>
           </ul>
         </nav>
         <div className={styles.buttons}>
@@ -52,19 +61,19 @@ export const Burger = () => {
           </button>
           <div className={styles.socials}>
             <div className={styles.link}>
-              <div className={styles.telegram}>
+              <a href="https://t.me/talos_tour" target="_blank" className={styles.telegram}>
                 <Telegram />
-              </div>
+              </a>
             </div>
             <div className={styles.link}>
-              <div className={styles.whatsup}>
+              <a href="https://wa.me/89217747604" target="_blank" className={styles.whatsup}>
                 <Whatsup />
-              </div>
+              </a>
             </div>
             <div className={styles.link}>
-              <div className={styles.instagram}>
+              <a href="https://www.instagram.com/talos_tour" target="_blank" className={styles.instagram}>
                 <Inst />
-              </div>
+              </a>
             </div>
           </div>
         </div>

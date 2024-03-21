@@ -3,6 +3,9 @@ import TextField from "@mui/material/TextField";
 import Autocomplete, { autocompleteClasses } from "@mui/material/Autocomplete";
 import { ruCountries } from "./countries";
 import { Popper, styled } from "@mui/material";
+import { SyntheticEvent } from "react";
+import { useAppDispatch } from "../../redux/hooks";
+import { setCountry } from "../../redux/slices/quiz-slice";
 
 const StyledPopper = styled(Popper)({
   [`& .${autocompleteClasses.paper}`]: {
@@ -33,8 +36,17 @@ const StyledTextField = styled(TextField)({
 });
 
 export const CountrySelect = () => {
+  const dispatch = useAppDispatch();
+  const setCountrySelect = (event: SyntheticEvent) => {
+    const target = event.target as typeof event.target & {
+      textContent: string;
+    };
+    dispatch(setCountry(target.textContent))
+  };
+
   return (
     <Autocomplete
+      onChange={(event) => setCountrySelect(event)}
       sx={{
         maxWidth: "400px",
         width: "100%",

@@ -1,20 +1,28 @@
 import { useEffect } from "react";
 import styles from "./modal.module.css";
 import { createPortal } from "react-dom";
-import { useAppDispatch } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { closeModal } from "../../redux/slices/modal-slice";
 import Cross from "../../assets/icons/cross.svg";
-import { Form } from "../../ui/form/form";
-
+import { FormModal } from "./form-modal";
+import { Response } from "./response";
+import { setSubmit } from "../../redux/slices/submit-slice";
 
 export const Modal = () => {
   const dispatch = useAppDispatch();
+  const { submit } = useAppSelector((state) => state.submit);
 
   const escapeModal = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       e.preventDefault();
+      dispatch(setSubmit(false));
       dispatch(closeModal());
     }
+  };
+
+  const hideModal = () => {
+    dispatch(setSubmit(false));
+    dispatch(closeModal());
   };
 
   useEffect(() => {
@@ -26,13 +34,12 @@ export const Modal = () => {
 
   return createPortal(
     <>
-      <div onClick={() => dispatch(closeModal())} className={styles.overlay}></div>
+      <div onClick={() => hideModal()} className={styles.overlay}></div>
       <div className={styles.modal}>
-        <div className={styles.cross} onClick={() => dispatch(closeModal())}>
+        <div className={styles.cross} onClick={() => hideModal()}>
           <Cross />
         </div>
-        <h5 className={styles.header}>Заявка на обратный звонок</h5>
-        <Form style={"light"}/>
+        {submit ? <Response /> : <FormModal />}
       </div>
     </>,
     document.getElementById("modal") as HTMLElement,

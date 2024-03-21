@@ -2,12 +2,16 @@ import styles from "./food-select.module.css";
 import { menuClasses, MenuItem } from "@mui/material";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
+import { useAppDispatch } from "../../redux/hooks";
+import { setNutrition } from "../../redux/slices/quiz-slice";
 
 export const FoodSelect = () => {
   const [food, setFood] = useState("");
+  const dispatch = useAppDispatch();
 
-  const handleChange = (event: SelectChangeEvent<unknown>) => {
-    setFood(event.target.value as string);
+  const handleChange = (event: SelectChangeEvent) => {
+    setFood(event.target.value);
+    dispatch(setNutrition(event.target.value))
   };
 
   return (

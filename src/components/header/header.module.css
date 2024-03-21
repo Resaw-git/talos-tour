@@ -47,6 +47,11 @@
   gap: 24px;
 }
 
+.list_item {
+  text-decoration: none;
+  color: var(--primary);
+}
+
 .list_item:hover {
   text-decoration: underline;
   cursor: pointer;

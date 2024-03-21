@@ -7,7 +7,7 @@ import { Form } from "../../ui/form/form";
 export const Footer = () => {
   return (
     <>
-      <footer className={styles.footer}>
+      <footer className={styles.footer} id="contacts">
         <div className={styles.container}>
           <div className={styles.layout}>
             <h1>Контакты:</h1>
@@ -26,24 +26,24 @@ export const Footer = () => {
                 </div>
                 <h4>Мы в соцсетях:</h4>
                 <div className={styles.socials}>
-                  <div className={styles.link}>
+                  <a href="https://t.me/talos_tour" target="_blank" className={styles.link}>
                     <div className={styles.telegram}>
                       <Telegram />
                     </div>
                     <p>Telegram</p>
-                  </div>
-                  <div className={styles.link}>
+                  </a>
+                  <a href="https://wa.me/89217747604" target="_blank" className={styles.link}>
                     <div className={styles.whatsup}>
                       <Whatsup />
                     </div>
                     <p>WhatsApp</p>
-                  </div>
-                  <div className={styles.link}>
+                  </a>
+                  <a href="https://www.instagram.com/talos_tour" target="_blank" className={styles.link}>
                     <div className={styles.instagram}>
                       <Inst />
                     </div>
                     <p>Instagram*</p>
-                  </div>
+                  </a>
                 </div>
                 <p className={styles.notice}>
                   *Instagram принадлежит компании Meta, которая запрещена на территории Российской Федерации

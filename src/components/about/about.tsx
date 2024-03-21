@@ -3,7 +3,7 @@ import photo from "../../assets/images/about.png";
 
 export const About = () => {
   return (
-    <section className={styles.about}>
+    <section className={styles.about} id="about">
       <div className={styles.container}>
         <div className={styles.layout}>
           <h2 className={styles.title}>Talos Tour - семейное турагентство</h2>

@@ -1,21 +1,56 @@
 import styles from "./counter.module.css";
-import { FC, ReactNode, useState } from "react";
+import { FC, ReactNode, useEffect, useState } from "react";
+import { useAppDispatch } from "../../redux/hooks";
+import { setAdults, setChildren } from "../../redux/slices/quiz-slice";
 
-export const Counter:FC<{children: ReactNode}> = ({children}) => {
+export const Counter: FC<{ children: ReactNode; adults?: boolean; childrenCount?: boolean }> = ({
+  children,
+  adults,
+  childrenCount,
+}) => {
   const [count, setCount] = useState(0);
+  const dispatch = useAppDispatch();
+  const setStore = (count: number) => {
+    if (adults) {
+      dispatch(setAdults(count));
+    }
+
+    if (childrenCount) {
+      dispatch(setChildren(count));
+    }
+  };
+
+  const handleCount = (operation: "+" | "-") => {
+    if (operation === "-") {
+      if (count === 0) return;
+      setCount((prevCount) => {
+        return prevCount - 1;
+      });
+    }
+
+    if (operation === "+") {
+      setCount((prevCount) => {
+        return prevCount + 1;
+      });
+    }
+  };
+
+  useEffect(() => {
+    setStore(count);
+  }, [count]);
 
   return (
     <div className={styles.wrapper}>
       {children}
-    <div className={styles.counter}>
-      <span className={styles.controls} onClick={() => setCount((prevState) => (count <= 0 ? 0 : prevState - 1))}>
-        -
-      </span>
-      <span className={styles.count}>{count}</span>
-      <span className={styles.controls} onClick={() => setCount((prevState) => prevState + 1)}>
-        +
-      </span>
-    </div>
+      <div className={styles.counter}>
+        <span className={styles.controls} onClick={() => handleCount("-")}>
+          -
+        </span>
+        <span className={styles.count}>{count}</span>
+        <span className={styles.controls} onClick={() => handleCount("+")}>
+          +
+        </span>
+      </div>
     </div>
   );
 };

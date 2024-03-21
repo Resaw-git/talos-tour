@@ -142,6 +142,7 @@
 }
 
 .link {
+  text-decoration: none;
   display: flex;
   align-items: center;
   width: 150px;
