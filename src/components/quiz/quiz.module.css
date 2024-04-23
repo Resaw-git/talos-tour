@@ -197,12 +197,11 @@
     display: none;
   }
 
-  .group_buttons {
-    width: 320px;
-    flex-direction: column-reverse;
-  }
-
   .form {
     width: 90%;
+  }
+  .group_buttons {
+    width: var(--container);
+    justify-content: space-around;
   }
 }

@@ -6,12 +6,15 @@ import { FC, SyntheticEvent } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { openModal } from "../../redux/slices/modal-slice";
 import { setSubmit, setSuccess, setLoading } from "../../redux/slices/submit-slice";
+import Arrow from "../../assets/icons/arrow.svg";
+import { prevQ } from "../../redux/slices/quiz-slice";
 
 type FormProps = {
   style: "light" | "dark";
+  isQuiz?: boolean;
 };
 
-export const Form: FC<FormProps> = ({ style }) => {
+export const Form: FC<FormProps> = ({ style, isQuiz }) => {
   const randNum = Math.floor(Math.random() * 10);
   const dispatch = useAppDispatch();
   const { country, dates, persons, stars, nutrition } = useAppSelector((state) => state.quiz);
@@ -69,9 +72,26 @@ export const Form: FC<FormProps> = ({ style }) => {
         <Input name="phone" placeholder="Ваш номер телефона" style={style} />
         <Input name="msg" placeholder="Ваш комментарий" style={style} />
       </div>
-      <Button type="submit" className={styles.button} style={style}>
-        Оставить заявку
-      </Button>
+
+      {isQuiz ? (
+        <div className={styles.group_buttons}>
+        <button className={styles.button} onClick={() => dispatch(prevQ())}>
+          <span className={styles.arrow_back}>
+            <Arrow />
+          </span>
+          Назад
+        </button>
+        <button type="submit" className={styles.button}>
+          Оставить заявку
+        </button>
+      </div>
+
+      ) : (
+        <Button type="submit" className={styles.button} style={style}>
+          Оставить заявку
+        </Button>
+      )}
+
       <div className={styles.checkbox}>
         <Checkbox id={"policy" + randNum} name="policy" style={style} />
         <label htmlFor={"policy" + randNum} className={styles.policy}>

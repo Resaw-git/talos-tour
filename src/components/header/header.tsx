@@ -25,9 +25,9 @@ export const Header = () => {
               <li className={styles.list_item} onClick={() => scrollTo("get-tour")}>
                 Подобрать тур
               </li>
-              <li className={styles.list_item} onClick={() => scrollTo("reviews")}>
+{/*               <li className={styles.list_item} onClick={() => scrollTo("reviews")}>
                 Отзывы
-              </li>
+              </li> */}
               <li className={`${styles.list_item} ${styles.disabled}`} onClick={() => scrollTo("for-tourist")}>
                 Для туриста
               </li>

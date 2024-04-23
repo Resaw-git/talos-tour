@@ -11,6 +11,7 @@ export const Checkbox:FC<CheckboxPropsType> = ({style, ...props}) => {
     <label className={styles.label}>
       <input
         type="checkbox"
+        required={true}
         className={styles.real_checkbox}
         {...props}
       />

@@ -47,7 +47,7 @@ export const Burger = () => {
             <li className={styles.link} onClick={() => scrollToSection("promo")}>Главная</li>
             <li className={styles.link} onClick={() => scrollToSection("about")}>О нас</li>
             <li className={styles.link} onClick={() => scrollToSection("get-tour")}>Подобрать тур</li>
-            <li className={styles.link} onClick={() => scrollToSection("reviews")}>Отзывы</li>
+{/*             <li className={styles.link} onClick={() => scrollToSection("reviews")}>Отзывы</li> */}
             <li className={styles.link} onClick={() => scrollToSection("for-tourist")}>Для туриста</li>
             <li className={styles.link} onClick={() => scrollToSection("contacts")}>Контакты</li>
           </ul>
