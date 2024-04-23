@@ -13,19 +13,20 @@ export const Burger = () => {
   const dispatch = useAppDispatch();
   const {burger} = useAppSelector((state) => state.modal);
 
-  const escapeModal = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      e.preventDefault();
-      dispatch(closeBurger());
-    }
-  };
 
   useEffect(() => {
+    const escapeModal = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        dispatch(closeBurger());
+      }
+    };
+
     document.addEventListener("keydown", escapeModal);
     return () => {
       document.removeEventListener("keydown", escapeModal);
     };
-  }, []);
+  }, [dispatch]);
 
   const scrollToSection = (section: string) => {
     if (burger) {
@@ -45,7 +46,7 @@ export const Burger = () => {
           <ul className={styles.list}>
             <li className={styles.link} onClick={() => scrollToSection("promo")}>Главная</li>
             <li className={styles.link} onClick={() => scrollToSection("about")}>О нас</li>
-            <li className={styles.link} onClick={() => scrollToSection("tour")}>Подобрать тур</li>
+            <li className={styles.link} onClick={() => scrollToSection("get-tour")}>Подобрать тур</li>
             <li className={styles.link} onClick={() => scrollToSection("reviews")}>Отзывы</li>
             <li className={styles.link} onClick={() => scrollToSection("for-tourist")}>Для туриста</li>
             <li className={styles.link} onClick={() => scrollToSection("contacts")}>Контакты</li>
