@@ -71,7 +71,9 @@ export const Footer = () => {
             </nav>
             <div className={styles.step_menu}>
               <span className={styles.text}>© {new Date().getFullYear()} Талос Тур. Все права защищены</span>
-              <span className={styles.link}>Политика конфиденциальности</span>
+              <a href="/policy.pdf" download className={styles.link}>
+                Политика конфиденциальности
+              </a>
             </div>
           </div>
         </div>

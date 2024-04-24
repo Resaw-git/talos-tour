@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../redux/hooks";
 import { openBurger, openModal } from "../../redux/slices/modal-slice";
 import Burger from "../../assets/icons/burger.svg";
 import { scrollTo } from "../../helpers/scroll-to";
-
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const dispatch = useAppDispatch();
@@ -14,23 +14,24 @@ export const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.layout}>
-          <a href="/">
+          <Link to="/">
             <img src={Logo} alt="логотип" className={styles.logo} />
-          </a>
+          </Link>
+
           <nav className={styles.nav}>
             <ul className={styles.list}>
-              <li className={styles.list_item} onClick={() => scrollTo("about")}>
-                О нас
-              </li>
-              <li className={styles.list_item} onClick={() => scrollTo("get-tour")}>
-                Подобрать тур
-              </li>
-{/*               <li className={styles.list_item} onClick={() => scrollTo("reviews")}>
+              <Link to="/" className={styles.list_item}>
+                <li onClick={() => scrollTo("about")}>О нас</li>
+              </Link>
+              <Link to="/" className={styles.list_item}>
+                <li onClick={() => scrollTo("get-tour")}>Подобрать тур</li>
+              </Link>
+              {/*               <li className={styles.list_item} onClick={() => scrollTo("reviews")}>
                 Отзывы
               </li> */}
-              <li className={`${styles.list_item} ${styles.disabled}`} onClick={() => scrollTo("for-tourist")}>
+              <Link className={styles.list_item} to="/tourist">
                 Для туриста
-              </li>
+              </Link>
               <li className={styles.list_item} onClick={() => scrollTo("contacts")}>
                 Контакты
               </li>

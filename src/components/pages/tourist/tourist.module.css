@@ -1,0 +1,129 @@
+.tourist {
+    margin-top: 95px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+  width: var(--container);
+}
+
+.layout {
+  padding: 0 120px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.breadcrubs {
+    margin-top: 80px;
+    color: var(--extra-grey);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+}
+
+.breadcrubs a {
+    text-decoration: none;
+    color: var(--extra-grey);
+}
+
+.content {
+    margin-top: 48px;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.content h2 {
+    margin: 0;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+}
+
+.content p {
+    margin: 0;
+    align-self: flex-end;
+    width: 725px;
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+}
+
+.content a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 700;
+    padding-left: 4px;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.documents {
+    align-self: flex-end;
+    width: 725px;
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.document {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+}
+
+.document:hover .name {
+    text-decoration: underline;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 38px;
+}
+
+.name {
+    color: var(--primary);
+    margin: 0;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 600;
+}
+
+.info {
+    color: var(--extra-grey);
+    margin: 0;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 1439px) {
+  .layout {
+    padding: 0 80px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .layout {
+    padding: 0 32px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .layout {
+    padding: 0 12px;
+  }
+}
