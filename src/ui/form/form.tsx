@@ -20,6 +20,7 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
   const { country, dates, persons, stars, nutrition } = useAppSelector((state) => state.quiz);
   const submitForm = (event: SyntheticEvent) => {
     event.preventDefault();
+    event.stopPropagation();
     dispatch(openModal());
     dispatch(setLoading(true));
     dispatch(setSubmit(true));
@@ -75,7 +76,7 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
 
       {isQuiz ? (
         <div className={styles.group_buttons}>
-        <button className={styles.button} onClick={() => dispatch(prevQ())}>
+        <button className={styles.button} onClick={(event) => {event.preventDefault(); dispatch(prevQ())}}>
           <span className={styles.arrow_back}>
             <Arrow />
           </span>

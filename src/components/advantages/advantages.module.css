@@ -19,6 +19,7 @@
 }
 
 .content > div {
+  box-sizing: border-box;
   color: var(--primary);
   height: 320px;
   padding: 30px;
@@ -29,14 +30,14 @@
 
 .start,
 .end {
-  width: 534px;
+  width: 588px;
 }
 
 .block {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 218px;
+  width: 282px;
 }
 
 .start {

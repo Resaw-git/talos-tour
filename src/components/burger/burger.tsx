@@ -1,5 +1,5 @@
 import styles from "./burger.module.css";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useAppDispatch } from "../../redux/hooks";
 import { closeBurger, openModal } from "../../redux/slices/modal-slice";
 import { useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -7,11 +7,10 @@ import Cross from "../../assets/icons/cross.svg";
 import Telegram from "../../assets/icons/teleg.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
 import Inst from "../../assets/icons/inst.svg";
-import { scrollTo } from "../../helpers/scroll-to";
+import { Nav } from "../nav/nav";
 
 export const Burger = () => {
   const dispatch = useAppDispatch();
-  const {burger} = useAppSelector((state) => state.modal);
 
 
   useEffect(() => {
@@ -28,13 +27,6 @@ export const Burger = () => {
     };
   }, [dispatch]);
 
-  const scrollToSection = (section: string) => {
-    if (burger) {
-      dispatch(closeBurger())
-    }
-    scrollTo(section);
-  }
-
   return createPortal(
     <>
       <div onClick={() => dispatch(closeBurger())} className={styles.overlay}></div>
@@ -42,16 +34,9 @@ export const Burger = () => {
         <div className={styles.cross} onClick={() => dispatch(closeBurger())}>
           <Cross />
         </div>
-        <nav className={styles.nav}>
-          <ul className={styles.list}>
-            <li className={styles.link} onClick={() => scrollToSection("promo")}>Главная</li>
-            <li className={styles.link} onClick={() => scrollToSection("about")}>О нас</li>
-            <li className={styles.link} onClick={() => scrollToSection("get-tour")}>Подобрать тур</li>
-{/*             <li className={styles.link} onClick={() => scrollToSection("reviews")}>Отзывы</li> */}
-            <li className={styles.link} onClick={() => scrollToSection("for-tourist")}>Для туриста</li>
-            <li className={styles.link} onClick={() => scrollToSection("contacts")}>Контакты</li>
-          </ul>
-        </nav>
+
+        <Nav styles={styles} />
+
         <div className={styles.buttons}>
           <a href="tel:+79217747604" className={styles.phone}>+7 921 774-76-04</a>
           <button className={styles.recall} onClick={() => {

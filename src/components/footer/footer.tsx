@@ -3,6 +3,8 @@ import Telegram from "../../assets/icons/teleg.svg";
 import Inst from "../../assets/icons/inst.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
 import { Form } from "../../ui/form/form";
+import { Link } from "react-router-dom";
+import { scrollTo } from "../../helpers/scroll-to";
 
 export const Footer = () => {
   return (
@@ -61,12 +63,27 @@ export const Footer = () => {
           <div className={styles.layout_footer}>
             <nav className={styles.nav}>
               <ul className={styles.list}>
-                <li className={styles.link}>Главная</li>
-                <li className={styles.link}>О нас</li>
-                <li className={styles.link}>Подобрать тур</li>
+                <Link to="/">
+                  <li onClick={() => scrollTo("main")} className={styles.link}>Главная</li>
+                </Link>
+                <Link to="/">
+                  <li onClick={() => scrollTo("about")} className={styles.link}>
+                    О нас
+                  </li>
+                </Link>
+                <Link to="/">
+                  <li onClick={() => scrollTo("get-tour")} className={styles.link}>
+                    Подобрать тур
+                  </li>
+                </Link>
+
+                {/*                 
                 <li className={styles.link}>Отзывы</li>
-                <li className={styles.link}>Галерея</li>
-                <li className={styles.link}>Для туриста</li>
+                <li className={styles.link}>Галерея</li> 
+                */}
+                <Link to="/tourist">
+                  <li className={styles.link}>Для туриста</li>
+                </Link>
               </ul>
             </nav>
             <div className={styles.step_menu}>

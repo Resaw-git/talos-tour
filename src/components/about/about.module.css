@@ -1,5 +1,5 @@
 .about {
-  margin-top: 180px;
+  padding-top: 180px;
   display: flex;
   justify-content: center;
   color: var(--primary);
@@ -86,6 +86,10 @@
 }
 
 @media screen and (max-width: 1023px) {
+  .about {
+    padding-top: 100px;
+  } 
+
   .layout {
     padding: 0 32px;
   }
@@ -122,10 +126,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .about {
-    margin-top: 50px;
-  }
-
 
   .layout {
     padding: 0 12px;

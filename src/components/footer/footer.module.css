@@ -67,8 +67,11 @@
   width: auto;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .under_footer .link:hover {
-  text-decoration: underline;
   color: #ffffff;
 }
 
