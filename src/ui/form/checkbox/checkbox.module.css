@@ -74,18 +74,22 @@
 }
 
 .error_wrap {
-  position: relative;
+  margin-left: 42px;
 }
 
 .error_text {
-  position: absolute;
-  top: 0;
-  left: 42px;
   font-weight: 500;
   font-size: 12px;
   color: var(--error);
   line-height: 14px;
-  bottom: 0;
+}
+
+@media screen and (max-width: 767px) { 
+  .error_wrap {
+    margin-top: 12px;
+    line-height: 12px;
+  }
+
 }
 
 
