@@ -63,11 +63,15 @@
 }
 
 .under_footer .link {
+  color: var(--extra-grey);
   width: auto;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .under_footer .link:hover {
-  text-decoration: underline;
   color: #ffffff;
 }
 

@@ -2,36 +2,45 @@ import styles from "./form.module.css";
 import { Button } from "../button/button";
 import { Input } from "./input/input";
 import { Checkbox } from "./checkbox/checkbox";
-import { FC, SyntheticEvent } from "react";
+import { FC } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { openModal } from "../../redux/slices/modal-slice";
 import { setSubmit, setSuccess, setLoading } from "../../redux/slices/submit-slice";
+import Arrow from "../../assets/icons/arrow.svg";
+import { prevQ } from "../../redux/slices/quiz-slice";
+import { Controller, FieldValues, useForm } from "react-hook-form";
 
 type FormProps = {
   style: "light" | "dark";
+  isQuiz?: boolean;
 };
 
-export const Form: FC<FormProps> = ({ style }) => {
-  const randNum = Math.floor(Math.random() * 10);
+export const Form: FC<FormProps> = ({ style, isQuiz }) => {
   const dispatch = useAppDispatch();
   const { country, dates, persons, stars, nutrition } = useAppSelector((state) => state.quiz);
-  const submitForm = (event: SyntheticEvent) => {
-    event.preventDefault();
+
+  const { control, handleSubmit } = useForm({
+    mode: "all",
+  });
+
+  const submitForm = (data: FieldValues) => {
     dispatch(openModal());
     dispatch(setLoading(true));
     dispatch(setSubmit(true));
-    const target = event.target as typeof event.target & {
+
+    console.log(data);
+    const form = data as typeof data & {
       name: { value: string };
       phone: { value: string | number };
-      msg: { value: string };
+      msg: { value: string } | undefined;
       policy: { checked: boolean };
     };
 
     const json = JSON.stringify({
-      name: target.name.value,
-      phone: target.phone.value,
-      msg: target.msg.value,
-      policy: target.policy.checked,
+      name: form.name.value,
+      phone: form.phone.value,
+      msg: form.msg?.value,
+      policy: form.policy.checked,
       dateArrival: dates.arrival,
       dateReturn: dates.return,
       adults: persons.adults,
@@ -63,21 +72,88 @@ export const Form: FC<FormProps> = ({ style }) => {
   };
 
   return (
-    <form className={styles.form} onSubmit={(event) => submitForm(event)}>
+    <form className={styles.form} noValidate onSubmit={handleSubmit(submitForm)}>
       <div className={styles.inputs}>
-        <Input name="name" placeholder="Ваше имя" style={style} />
-        <Input name="phone" placeholder="Ваш номер телефона" style={style} />
-        <Input name="msg" placeholder="Ваш комментарий" style={style} />
+        <Controller
+          control={control}
+          name="name"
+          rules={{ required: true }}
+          render={({ field, fieldState }) => (
+            <Input
+              placeholder="Ваше имя"
+              type="text"
+              style={style}
+              onChange={(event) => field.onChange(event)}
+              value={field.value || ""}
+              isError={!!fieldState.error}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="phone"
+          rules={{ required: true }}
+          render={({ field, fieldState }) => (
+            <Input
+              placeholder="Ваш номер телефона"
+              type="tel"
+              style={style}
+              onChange={(event) => field.onChange(event)}
+              value={field.value || ""}
+              isError={!!fieldState.error}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="msg"
+          render={({ field, fieldState }) => (
+            <Input
+              placeholder="Ваш комментарий"
+              style={style}
+              type="text"
+              onChange={(event) => field.onChange(event)}
+              value={field.value || ""}
+              isError={!!fieldState.error}
+            />
+          )}
+        />
       </div>
-      <Button type="submit" className={styles.button} style={style}>
-        Оставить заявку
-      </Button>
-      <div className={styles.checkbox}>
-        <Checkbox id={"policy" + randNum} name="policy" style={style} />
-        <label htmlFor={"policy" + randNum} className={styles.policy}>
-          Я подтверждаю своё согласие на обработку персональных данных и соглашаюсь с политикой конфиденциальности
-        </label>
-      </div>
+
+      {isQuiz ? (
+        <div className={styles.group_buttons}>
+          <button
+            className={styles.button}
+            onClick={(event) => {
+              event.preventDefault();
+              dispatch(prevQ());
+            }}
+          >
+            <span className={styles.arrow_back}>
+              <Arrow />
+            </span>
+            Назад
+          </button>
+          <button type="submit" className={styles.button}>
+            Оставить заявку
+          </button>
+        </div>
+      ) : (
+        <Button type="submit" className={styles.button} style={style}>
+          Оставить заявку
+        </Button>
+      )}
+
+      <Controller
+        control={control}
+        name="policy"
+        rules={{ required: true }}
+        render={({ field, fieldState }) => (
+          <Checkbox style={style} onChange={(event) => field.onChange(event)} isError={!!fieldState.error} />
+        )}
+      />
     </form>
   );
 };

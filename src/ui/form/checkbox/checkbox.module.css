@@ -58,3 +58,38 @@
   transform: translate(-50%, -50%) scale(1);
 }
 
+.checkbox {
+  position: relative;
+  margin-top: 16px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.policy {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--extra-grey);
+  line-height: 14px;
+}
+
+.error_wrap {
+  margin-left: 42px;
+}
+
+.error_text {
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--error);
+  line-height: 14px;
+}
+
+@media screen and (max-width: 767px) { 
+  .error_wrap {
+    margin-top: 12px;
+    line-height: 12px;
+  }
+
+}
+
+

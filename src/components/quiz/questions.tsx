@@ -120,7 +120,7 @@ export const Question5 = () => {
     <Wrapper>
       <h3>5/5 Ваши данные для связи</h3>
       <div className={styles.form}>
-        <Form style={"dark"} />
+        <Form style={"dark"} isQuiz />
       </div>
     </Wrapper>
   );
