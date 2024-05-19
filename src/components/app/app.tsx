@@ -1,7 +1,7 @@
 import styles from "./app.module.css";
 import { Header } from "../header/header";
 import { Footer } from "../footer/footer";
-import { Home } from "../pages/home";
+import { Home } from "../pages/home/home";
 import { useAppSelector } from "../../redux/hooks";
 import { Modal } from "../modal/modal";
 import { Burger } from "../burger/burger";

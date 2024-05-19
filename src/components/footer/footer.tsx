@@ -2,7 +2,7 @@ import styles from "./footer.module.css";
 import Telegram from "../../assets/icons/teleg.svg";
 import Inst from "../../assets/icons/inst.svg";
 import Whatsup from "../../assets/icons/whatsup.svg";
-import { Form } from "../../ui/form/form";
+import { Form } from "../form/form";
 import { Link } from "react-router-dom";
 import { scrollTo } from "../../helpers/scroll-to";
 

@@ -1,0 +1,57 @@
+.blog {
+  margin-top: 180px;
+  color: var(--primary);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: var(--container);
+}
+
+.layout {
+  padding: 0 120px;
+}
+
+.blog h1 {
+  width: 900px;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.blog p {
+  width: 900px;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.seasons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  border-radius: 30px;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.04);
+  background-color: var(--grey);
+  width: 282px;
+  height: 420px;
+}
+
+.card h4 {
+  margin: 0;
+  padding-top: 24px;
+  padding-left: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.button {
+  margin: 24px 16px 0;
+  display: flex;
+  justify-content: center;
+}
+
+

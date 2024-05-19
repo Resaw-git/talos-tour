@@ -1,0 +1,50 @@
+.subscribe {
+  margin-top: 180px;
+  height: 342px;
+  border-radius: 30px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container {
+  width: var(--container);
+}
+
+.layout {
+  padding: 0 120px;
+}
+
+.subscribe h1 {
+  margin: 0;
+  font-size: 42px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.buttons {
+  margin-top: 56px;
+  display: flex;
+  gap: 28px;
+}
+
+.buttons button {
+  padding: 15px 0;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  background-color: var(--primary);
+  color: #ffffff;
+  width: 385px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 700;
+  gap: 10px;
+}
+
+.buttons button:hover {
+  cursor: pointer;
+}
