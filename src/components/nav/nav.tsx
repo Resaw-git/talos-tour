@@ -41,11 +41,6 @@ export const Nav: FC<NavProps> = ({ styles }) => {
             Подобрать тур
           </li>
         </Link>
-        {/*               
-        <li className={styles.link} onClick={() => scrollFunc("reviews")}>
-          Отзывы
-        </li> 
-        */}
         <Link className={styles.link} to="/tourist">
           <li onClick={() => closeMenu()}>Для туриста</li>
         </Link>

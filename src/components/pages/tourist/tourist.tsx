@@ -55,16 +55,9 @@ export const Tourist = () => {
                 <Pdf />
                 <div className={styles.description}>
                   <span className={styles.name}>Договор на оказание услуги</span>
-                  <span className={styles.info}>PDF, 180 KB</span>
+                  <span className={styles.info}>PDF, 5.56 MB</span>
                 </div>
               </a>
-{/*               <a href="/contract.pdf" download className={styles.document}>
-                <Pdf />
-                <div className={styles.description}>
-                  <span className={styles.name}>Реквизиты</span>
-                  <span className={styles.info}>PDF, 180 KB</span>
-                </div>
-              </a> */}
               <a href="/doc.pdf" download className={styles.document}>
                 <Pdf />
                 <div className={styles.description}>

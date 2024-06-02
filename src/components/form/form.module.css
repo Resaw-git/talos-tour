@@ -10,8 +10,6 @@
   margin-bottom: 48px;
 }
 
-
-
 .group_buttons {
   display: flex;
   justify-content: space-between;
@@ -30,7 +28,7 @@
   border-radius: 30px;
   background-color: transparent;
   color: #ffffff;
-  padding: 13px;
+  padding: 14px;
   cursor: pointer;
   transition:
     color var(--transition-delay),
@@ -57,7 +55,8 @@
 
 @media screen and (max-width: 767px) { 
   .button {
-    width: 160px;
+    width: 170px;
+    height: 58px;
   }
 
 }
