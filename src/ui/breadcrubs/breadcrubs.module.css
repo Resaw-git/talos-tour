@@ -1,0 +1,20 @@
+.breadcrubs {
+    margin-top: 80px;
+    color: var(--extra-grey);
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+  
+  .breadcrubs a {
+    text-decoration: none;
+    color: var(--extra-grey);
+  }
+  
+  .breadcrubs a:hover {
+    text-decoration: underline;
+  }

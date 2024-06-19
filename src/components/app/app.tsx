@@ -1,13 +1,13 @@
 import styles from "./app.module.css";
 import { Header } from "../header/header";
 import { Footer } from "../footer/footer";
-import { Home } from "../pages/home/home";
+import { Home } from "../../pages/home/home";
 import { useAppSelector } from "../../redux/hooks";
 import { Modal } from "../modal/modal";
 import { Burger } from "../burger/burger";
 import { Routes, Route, Outlet } from "react-router-dom";
-import { Tourist } from "../pages/tourist/tourist";
-import { Calendar } from "../pages/calendar/calendar";
+import { Tourist } from "../../pages/tourist/tourist";
+import { Seasons } from "../../pages/seasons/seasons";
 
 export const App = () => {
   const { modal, burger } = useAppSelector((state) => state.modal);
@@ -26,7 +26,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="tourist" element={<Tourist />} />
-          <Route path="calendar" element={<Calendar />} />
+          <Route path="seasons" element={<Seasons />} />
         </Route>
       </Routes>
       {modal && <Modal />}
