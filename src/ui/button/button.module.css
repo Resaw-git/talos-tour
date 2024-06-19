@@ -27,3 +27,11 @@
   composes: button;
   border: 1px solid #ffffff;
 }
+
+
+@media screen and (max-width: 767px) {
+  .button {
+    padding: 14px 0;
+    font-size: 14px;
+  }
+}

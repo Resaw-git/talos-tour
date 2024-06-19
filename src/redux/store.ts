@@ -1,17 +1,22 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { sliderSlice } from "./slices/slider-slice";
-import { quizSlice } from "./slices/quiz-slice";
-import { modalSlice } from "./slices/modal-slice";
-import { submitSlice } from "./slices/submit-slice";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import sliderReducer from "./slices/slider-slice";
+import quizReducer from "./slices/quiz-slice";
+import modalReducer from "./slices/modal-slice";
+import submitReducer from "./slices/submit-slice";
+import seasonsReducer from "./slices/seasons-slice";
+
+const rootReducer = combineReducers({
+  slider: sliderReducer,
+  quiz: quizReducer,
+  modal: modalReducer,
+  submit: submitReducer, 
+  seasons: seasonsReducer
+})
 
 export const store = configureStore({
-  reducer: {
-    slider: sliderSlice.reducer,
-    quiz: quizSlice.reducer,
-    modal: modalSlice.reducer,
-    submit: submitSlice.reducer
-  },
+  reducer: rootReducer,
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type AppStore = typeof store;
+export type RootState = ReturnType<typeof rootReducer>;
 export type AppDispatch = typeof store.dispatch;

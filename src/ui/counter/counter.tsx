@@ -1,5 +1,5 @@
 import styles from "./counter.module.css";
-import { FC, ReactNode, useEffect, useState } from "react";
+import { FC, ReactNode, useState } from "react";
 import { useAppDispatch } from "../../redux/hooks";
 import { setAdults, setChildren } from "../../redux/slices/quiz-slice";
 
@@ -10,15 +10,6 @@ export const Counter: FC<{ children: ReactNode; adults?: boolean; childrenCount?
 }) => {
   const [count, setCount] = useState(0);
   const dispatch = useAppDispatch();
-  const setStore = (count: number) => {
-    if (adults) {
-      dispatch(setAdults(count));
-    }
-
-    if (childrenCount) {
-      dispatch(setChildren(count));
-    }
-  };
 
   const handleCount = (operation: "+" | "-") => {
     if (operation === "-") {
@@ -33,11 +24,15 @@ export const Counter: FC<{ children: ReactNode; adults?: boolean; childrenCount?
         return prevCount + 1;
       });
     }
-  };
 
-  useEffect(() => {
-    setStore(count);
-  }, [count]);
+    if (adults) {
+      dispatch(setAdults(count));
+    }
+
+    if (childrenCount) {
+      dispatch(setChildren(count));
+    }
+  };
 
   return (
     <div className={styles.wrapper}>

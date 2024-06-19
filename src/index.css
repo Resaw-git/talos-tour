@@ -1,6 +1,3 @@
-@import "normalize.css";
-
-
 :root {
   --background: #f3f7ff;
   --grey: #e2eaf8;
@@ -29,6 +26,11 @@
 *::-webkit-scrollbar-thumb {
   border-radius: 15px;
   background-color: var(--primary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 @media screen and (max-width: 1439px) {

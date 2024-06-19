@@ -21,3 +21,5 @@ export const submitSlice = createSlice({
 });
 
 export const { setLoading, setSuccess, setSubmit } = submitSlice.actions;
+
+export default submitSlice.reducer;

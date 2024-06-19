@@ -60,3 +60,5 @@ export const {
   setStars,
   setNutrition,
 } = quizSlice.actions;
+
+export default quizSlice.reducer;

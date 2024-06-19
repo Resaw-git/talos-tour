@@ -29,11 +29,9 @@ export const sliderSlice = createSlice({
       state.slide = action.payload % state.items.length;
     },
     handleTouchStart: (state, action) => {
-      //action e.touches[0].clientX;
       state.touchPosition = action.payload;
     },
     handleTouchMove: (state, action) => {
-      //action e.touches[0].clientX;
       if (state.touchPosition === null) {
         return;
       }
@@ -42,12 +40,10 @@ export const sliderSlice = createSlice({
       const direction = state.touchPosition - currentPosition;
 
       if (direction > 10) {
-        //changeSlide(1);
         state.slide = 1;
       }
 
       if (direction < -10) {
-        //changeSlide(-1);
         state.slide = -1;
       }
 
@@ -58,3 +54,5 @@ export const sliderSlice = createSlice({
 
 export const { loadImages, goToSlide, changeSlide, handleTouchStart, handleTouchMove, setAutoPlay } =
   sliderSlice.actions;
+
+export default sliderSlice.reducer;

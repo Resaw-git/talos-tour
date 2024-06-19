@@ -1,5 +1,5 @@
 import styles from "./modal.module.css";
-import { Form } from "../../ui/form/form";
+import { Form } from "../form/form";
 
 export const FormModal = () => {
   return (
