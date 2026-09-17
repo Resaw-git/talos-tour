@@ -41,6 +41,16 @@ export const Nav: FC<NavProps> = ({ styles }) => {
             Подобрать тур
           </li>
         </Link>
+        <Link to="/" className={styles.link}>
+          <li
+            onClick={() => {
+              closeMenu();
+              scrollTo("calendar");
+            }}
+          >
+            Календарь
+          </li>
+        </Link>
         <Link className={styles.link} to="/tourist">
           <li onClick={() => closeMenu()}>Для туриста</li>
         </Link>

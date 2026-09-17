@@ -1,0 +1,86 @@
+.list {
+    margin-top: 40px;
+  }
+  
+  .title {
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.2em;
+    color: var(--primary);
+  }
+  
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .button svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .image {
+    display: block;
+    width: 720px;
+    height: 320px;
+    margin-left: auto;
+    margin-right: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .text {
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: 80px;
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 500;
+    color: var(--primary);
+  }
+  
+  @media screen and (max-width: 1439px) {
+    .image {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  
+    .text {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .title {
+      font-size: 18px;
+    }
+  
+    .button {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .button svg {
+      width: 20px;
+      height: 20px;
+    }
+  
+    .image {
+      height: 200px;
+    }
+  }

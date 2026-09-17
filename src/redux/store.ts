@@ -3,14 +3,12 @@ import sliderReducer from "./slices/slider-slice";
 import quizReducer from "./slices/quiz-slice";
 import modalReducer from "./slices/modal-slice";
 import submitReducer from "./slices/submit-slice";
-import seasonsReducer from "./slices/seasons-slice";
 
 const rootReducer = combineReducers({
   slider: sliderReducer,
   quiz: quizReducer,
   modal: modalReducer,
-  submit: submitReducer, 
-  seasons: seasonsReducer
+  submit: submitReducer
 })
 
 export const store = configureStore({

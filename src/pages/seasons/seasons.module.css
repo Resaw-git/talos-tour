@@ -23,9 +23,57 @@
     font-weight: 700;
   }
 
-  .season p {
+  .intro {
     width: 970px;
     margin-top: 24px;
     font-size: 16px;
+    line-height: 21px;
     font-weight: 500;
+  }
+
+  @media screen and (max-width: 1439px) {
+    .layout {
+      padding: 0 80px;
+    }
+  
+    .season {
+      padding-top: 75px;
+    }
+  }
+  
+  @media screen and (max-width: 1023px) {
+    .layout {
+      padding: 0 32px;
+    }
+  
+    .season {
+      padding-top: 55px;
+    }
+  
+    .season h1 {
+      font-size: 32px;
+    }
+  
+    .intro {
+      width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 767px) {
+    .layout {
+      padding: 0 12px;
+    }
+  
+    .season {
+      padding-top: 35px;
+    }
+  
+    .season h1 {
+      font-size: 20px;
+    }
+  
+    .intro {
+      margin-top: 16px;
+      font-size: 14px;
+    }
   }

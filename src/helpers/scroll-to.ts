@@ -12,5 +12,9 @@ export const scrollTo = async (id: string) => {
   await checkElement(id);
   const element = document.getElementById(id);
 
-  element?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+  const header = document.querySelector("header");
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+  const top = (element?.getBoundingClientRect().top ?? 0) + window.scrollY - headerHeight;
+
+  window.scrollTo({ top, behavior: "smooth" });
 };

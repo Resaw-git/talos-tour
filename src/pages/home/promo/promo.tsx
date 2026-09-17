@@ -1,11 +1,12 @@
 import styles from "./promo.module.css";
 import { Button } from "../../../ui/button/button";
 import { scrollTo } from "../../../helpers/scroll-to";
+import promoImage from "../../../assets/images/promo_uhd.png?format=webp";
 
 export const Promo = () => {
   return (
     <section className={styles.promo} id="promo">
-      <div className={styles.image} />
+      <div className={styles.image} style={{ backgroundImage: `url(${promoImage})` }} />
       <div className={styles.container}>
         <div className={styles.layout}>
           <div className={styles.left}>

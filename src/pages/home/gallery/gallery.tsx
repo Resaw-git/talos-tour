@@ -3,12 +3,12 @@ import { Slider } from "../../../ui/slider/slider";
 import { useAppDispatch } from "../../../redux/hooks";
 import { useEffect } from "react";
 import { loadImages } from "../../../redux/slices/slider-slice";
-import img1 from "../../assets/images/IMG_1134.png";
-import img2 from "../../assets/images/IMG_1174.png";
-import img3 from "../../assets/images/IMG_3594.png";
-import img4 from "../../assets/images/IMG_8664.png";
-import img5 from "../../assets/images/IMG_3619.png";
-import img6 from "../../assets/images/IMG_8905.png";
+import img1 from "../../assets/images/IMG_1134.png?format=webp";
+import img2 from "../../assets/images/IMG_1174.png?format=webp";
+import img3 from "../../assets/images/IMG_3594.png?format=webp";
+import img4 from "../../assets/images/IMG_8664.png?format=webp";
+import img5 from "../../assets/images/IMG_3619.png?format=webp";
+import img6 from "../../assets/images/IMG_8905.png?format=webp";
 
 
 export const Gallery = () => {
