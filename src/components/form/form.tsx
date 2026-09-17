@@ -2,45 +2,49 @@ import styles from "./form.module.css";
 import { Button } from "../../ui/button/button";
 import { Input } from "../../ui/input/input";
 import { Checkbox } from "../../ui/checkbox/checkbox";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { openModal } from "../../redux/slices/modal-slice";
-import { setSubmit, setSuccess, setLoading } from "../../redux/slices/submit-slice";
+import { setSubmit, setSuccess, setLoading, setErrorMessage } from "../../redux/slices/submit-slice";
 import Arrow from "../../assets/icons/arrow.svg";
 import { prevQ } from "../../redux/slices/quiz-slice";
-import { Controller, FieldValues, useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 
 type FormProps = {
   style: "light" | "dark";
   isQuiz?: boolean;
 };
 
+type FormValues = {
+  name: string;
+  phone: string;
+  msg?: string;
+  policy: boolean;
+  website?: string;
+};
+
 export const Form: FC<FormProps> = ({ style, isQuiz }) => {
   const dispatch = useAppDispatch();
   const { country, dates, persons, stars, nutrition } = useAppSelector((state) => state.quiz);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit, register } = useForm<FormValues>({
     mode: "all",
   });
 
-  const submitForm = (data: FieldValues) => {
+  const submitForm = (data: FormValues) => {
     dispatch(openModal());
     dispatch(setLoading(true));
     dispatch(setSubmit(true));
-
-    console.log(data);
-    const form = data as typeof data & {
-      name: { value: string };
-      phone: { value: string | number };
-      msg: { value: string } | undefined;
-      policy: { checked: boolean };
-    };
+    dispatch(setErrorMessage(""));
+    setIsSubmitting(true);
 
     const json = JSON.stringify({
-      name: form.name.value,
-      phone: form.phone.value,
-      msg: form.msg?.value,
-      policy: form.policy.checked,
+      name: data.name,
+      phone: data.phone,
+      msg: data.msg,
+      policy: data.policy,
+      website: data.website,
       dateArrival: dates.arrival,
       dateReturn: dates.return,
       adults: persons.adults,
@@ -50,42 +54,60 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
       nutrition,
     });
 
-    fetch("mail.php", {
+    fetch("/mail.php", {
       method: "POST",
+      headers: { "Content-Type": "application/json" },
       body: json,
     })
-      .then((response) => {
-        if (response.ok) {
-          return response.text();
-        } else {
-          throw new Error(`${response.status} ${response.statusText}`);
+      .then((response) => response.json())
+      .then((result: { success: boolean; message: string }) => {
+        dispatch(setSuccess(result.success));
+        if (!result.success) {
+          dispatch(setErrorMessage(result.message));
         }
-      })
-      .then(() => {
-        dispatch(setSuccess(true));
-        dispatch(setLoading(false));
       })
       .catch(() => {
         dispatch(setSuccess(false));
+        dispatch(setErrorMessage("Не удалось отправить заявку. Проверьте соединение и попробуйте ещё раз."));
+      })
+      .finally(() => {
         dispatch(setLoading(false));
+        setIsSubmitting(false);
       });
   };
 
   return (
     <form className={styles.form} noValidate onSubmit={handleSubmit(submitForm)}>
+      <input
+        type="text"
+        {...register("website")}
+        style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+      />
+
       <div className={styles.inputs}>
         <Controller
           control={control}
           name="name"
-          rules={{ required: true }}
+          rules={{
+            required: "Пожалуйста, укажите ваше имя",
+            minLength: { value: 2, message: "Имя слишком короткое" },
+            pattern: {
+              value: /^[а-яёА-ЯЁa-zA-Z\s-]+$/,
+              message: "Имя может содержать только буквы",
+            },
+          }}
           render={({ field, fieldState }) => (
             <Input
               label="Ваше имя"
               type="text"
               style={style}
-              onChange={(event) => field.onChange(event)}
+              onChange={field.onChange}
               value={field.value || ""}
               isError={!!fieldState.error}
+              errorText={fieldState.error?.message}
             />
           )}
         />
@@ -93,15 +115,22 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
         <Controller
           control={control}
           name="phone"
-          rules={{ required: true }}
+          rules={{
+            required: "Пожалуйста, укажите номер телефона",
+            pattern: {
+              value: /^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$/,
+              message: "Заполните номер телефона полностью",
+            },
+          }}
           render={({ field, fieldState }) => (
             <Input
               label="Ваш номер телефона"
               type="tel"
               style={style}
-              onChange={(event) => field.onChange(event)}
+              onChange={field.onChange}
               value={field.value || ""}
               isError={!!fieldState.error}
+              errorText={fieldState.error?.message}
             />
           )}
         />
@@ -114,7 +143,7 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
               label="Ваш комментарий"
               style={style}
               type="text"
-              onChange={(event) => field.onChange(event)}
+              onChange={field.onChange}
               value={field.value || ""}
               isError={!!fieldState.error}
             />
@@ -136,12 +165,12 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
             </span>
             Назад
           </button>
-          <button type="submit" className={styles.button}>
+          <button type="submit" className={styles.button} disabled={isSubmitting}>
             Оставить заявку
           </button>
         </div>
       ) : (
-        <Button type="submit" className={styles.button} style={style}>
+        <Button type="submit" className={styles.button} style={style} disabled={isSubmitting}>
           Оставить заявку
         </Button>
       )}
@@ -151,7 +180,12 @@ export const Form: FC<FormProps> = ({ style, isQuiz }) => {
         name="policy"
         rules={{ required: true }}
         render={({ field, fieldState }) => (
-          <Checkbox style={style} onChange={(event) => field.onChange(event)} isError={!!fieldState.error} />
+          <Checkbox
+            style={style}
+            checked={field.value || false}
+            onChange={field.onChange}
+            isError={!!fieldState.error}
+          />
         )}
       />
     </form>

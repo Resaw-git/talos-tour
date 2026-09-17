@@ -2,7 +2,7 @@ import styles from "./input.module.css";
 import { FC, InputHTMLAttributes } from "react";
 import InputMask from "react-input-mask";
 
-type InputType = InputHTMLAttributes<HTMLInputElement> & {
+type InputType = Omit<InputHTMLAttributes<HTMLInputElement>, "children"> & {
   isError?: boolean;
   errorText?: string;
   label: string;

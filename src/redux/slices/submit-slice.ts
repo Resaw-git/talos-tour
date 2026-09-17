@@ -6,6 +6,7 @@ export const submitSlice = createSlice({
     submit: false,
     loading: false,
     success: false,
+    errorMessage: "",
   },
   reducers: {
     setLoading: (state, action) => {
@@ -17,9 +18,12 @@ export const submitSlice = createSlice({
     setSubmit: (state, action) => {
       state.submit = action.payload
     },
+    setErrorMessage: (state, action) => {
+      state.errorMessage = action.payload
+    },
   },
 });
 
-export const { setLoading, setSuccess, setSubmit } = submitSlice.actions;
+export const { setLoading, setSuccess, setSubmit, setErrorMessage } = submitSlice.actions;
 
 export default submitSlice.reducer;

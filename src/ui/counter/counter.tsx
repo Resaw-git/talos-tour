@@ -1,6 +1,6 @@
 import styles from "./counter.module.css";
-import { FC, ReactNode, useState } from "react";
-import { useAppDispatch } from "../../redux/hooks";
+import { FC, ReactNode } from "react";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { setAdults, setChildren } from "../../redux/slices/quiz-slice";
 
 export const Counter: FC<{ children: ReactNode; adults?: boolean; childrenCount?: boolean }> = ({
@@ -8,29 +8,21 @@ export const Counter: FC<{ children: ReactNode; adults?: boolean; childrenCount?
   adults,
   childrenCount,
 }) => {
-  const [count, setCount] = useState(0);
   const dispatch = useAppDispatch();
 
-  const handleCount = (operation: "+" | "-") => {
-    if (operation === "-") {
-      if (count === 0) return;
-      setCount((prevCount) => {
-        return prevCount - 1;
-      });
-    }
+  const count = useAppSelector((state) => (adults ? state.quiz.persons.adults : state.quiz.persons.children));
 
-    if (operation === "+") {
-      setCount((prevCount) => {
-        return prevCount + 1;
-      });
-    }
+  const handleCount = (operation: "+" | "-") => {
+    if (operation === "-" && count === 0) return;
+
+    const newCount = operation === "+" ? count + 1 : count - 1;
 
     if (adults) {
-      dispatch(setAdults(count));
+      dispatch(setAdults(newCount));
     }
 
     if (childrenCount) {
-      dispatch(setChildren(count));
+      dispatch(setChildren(newCount));
     }
   };
 
